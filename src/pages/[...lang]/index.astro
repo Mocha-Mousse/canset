@@ -23,7 +23,7 @@ const sayilar = [t.hizmetler.length, t.projeler.length, tekil.length];
         </div>
       </div>
       <ul class="sayilar" aria-label={h.sayilarEtiket}>
-        {sayilar.map((s, i) => <li><strong>{s}</strong><span>{h.sayilar[i]}</span></li>)}
+        {sayilar.map((s, i) => <li><strong data-say={s}>{s}</strong><span>{h.sayilar[i]}</span></li>)}
         <li><strong>ISO</strong><span>14064-1 · 14067 · 14040-44 · 14025</span></li>
       </ul>
     </div>
@@ -31,24 +31,32 @@ const sayilar = [t.hizmetler.length, t.projeler.length, tekil.length];
   </section>
 
   <section class="bolum">
-    <div class="kap">
+    <div class="kap ac">
       <p class="ust-yazi">{h.neUst}</p>
       <h2>{h.neBaslik}</h2>
-      <div class="izgara iki" style="margin-top:2rem">
-        {t.eksenler.map((e, i) => (
-          <article class="kart">
-            <span class="no">{i + 1}</span>
-            <h3>{e.ad}</h3>
-            <p>{e.metin[0]}</p>
-          </article>
-        ))}
+      <div class="sekmeler ac" style="margin-top:2rem">
+        <div class="sekme-liste" role="tablist" aria-label={h.neUst}>
+          {t.eksenler.map((e, i) => (
+            <button type="button" role="tab" id={`sekme-${i}`} aria-controls={`panel-${i}`} aria-selected={i === 0 ? 'true' : 'false'} tabindex={i === 0 ? 0 : -1}>
+              <span class="no">{i + 1}</span>{e.ad}
+            </button>
+          ))}
+        </div>
+        <div class="paneller">
+          {t.eksenler.map((e, i) => (
+            <article class="kart panel" role="tabpanel" id={`panel-${i}`} aria-labelledby={`sekme-${i}`} tabindex="0">
+              <h3>{e.ad}</h3>
+              {e.metin.map((p) => <p>{p}</p>)}
+            </article>
+          ))}
+        </div>
       </div>
       <div class="dugme-sira"><a class="dugme cizgili" href={u('/hizmetler')}>{h.tumHizmetler}</a></div>
     </div>
   </section>
 
   <section class="bolum tonlu">
-    <div class="kap fark">
+    <div class="kap fark ac">
       <div>
         <p class="ust-yazi">{h.farkUst}</p>
         <h2>{h.farkBaslik}</h2>
@@ -66,14 +74,17 @@ const sayilar = [t.hizmetler.length, t.projeler.length, tekil.length];
       <p class="ust-yazi">{h.refUst}</p>
       <h2>{h.refBaslik}</h2>
       <p class="giris">{h.refMetin}</p>
-      <div class="logolar" style="margin-top:2rem">
-        {tekil.slice(0, 12).map((r) => <span><img src={kok + r.img} alt={r.name} loading="lazy" /></span>)}
+      <div class="serit" style="margin-top:2rem">
+        <ul class="serit-iz">
+          {tekil.map((r) => <li><img src={kok + r.img} alt={r.name} loading="lazy" /></li>)}
+          {tekil.map((r) => <li aria-hidden="true"><img src={kok + r.img} alt="" loading="lazy" /></li>)}
+        </ul>
       </div>
       <div class="dugme-sira"><a class="dugme cizgili" href={u('/referanslar')}>{h.tumRef}</a></div>
     </div>
   </section>
 
-  <section class="kap">
+  <section class="kap ac">
     <div class="cta">
       <div>
         <h2>{h.ctaBaslik}</h2>
@@ -83,6 +94,48 @@ const sayilar = [t.hizmetler.length, t.projeler.length, tekil.length];
     </div>
   </section>
 </Base>
+
+<script>
+  const azHareket = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.documentElement.classList.add('js');
+
+  // Sekmeler: ok tuşlarıyla gezilir, seçili olmayan paneller gizlenir
+  const sekmeler = [...document.querySelectorAll<HTMLElement>('[role=tab]')];
+  const sec = (i: number, odak = false) => sekmeler.forEach((s, j) => {
+    s.setAttribute('aria-selected', String(i === j));
+    s.tabIndex = i === j ? 0 : -1;
+    document.getElementById(s.getAttribute('aria-controls')!)!.hidden = i !== j;
+    if (odak && i === j) s.focus();
+  });
+  sekmeler.forEach((s, i) => {
+    s.addEventListener('click', () => sec(i));
+    s.addEventListener('keydown', (e) => {
+      const adim = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }[e.key];
+      if (!adim) return;
+      e.preventDefault();
+      sec((i + adim + sekmeler.length) % sekmeler.length, true);
+    });
+  });
+  if (sekmeler.length) sec(0);
+
+  // Görünüme girince belirme + sayaç
+  const say = (el: HTMLElement) => {
+    const hedef = Number(el.dataset.say), t0 = performance.now();
+    const adim = (t: number) => {
+      const k = Math.min((t - t0) / 1200, 1);
+      el.textContent = String(Math.round(hedef * (1 - (1 - k) ** 3)));
+      if (k < 1) requestAnimationFrame(adim);
+    };
+    requestAnimationFrame(adim);
+  };
+  const io = new IntersectionObserver((kayitlar) => kayitlar.forEach((k) => {
+    if (!k.isIntersecting) return;
+    io.unobserve(k.target);
+    const el = k.target as HTMLElement;
+    if (el.dataset.say) { if (!azHareket) say(el); } else el.classList.add('gorundu');
+  }), { threshold: 0.15 });
+  document.querySelectorAll('.ac, [data-say]').forEach((el) => io.observe(el));
+</script>
 
 <style>
   .hero { position: relative; overflow: hidden; background: radial-gradient(60rem 30rem at 85% -10%, #d6efdd, transparent 70%), var(--zemin); padding: clamp(3.5rem, 9vw, 7.5rem) 0 clamp(3rem, 7vw, 6rem); }
@@ -96,7 +149,46 @@ const sayilar = [t.hizmetler.length, t.projeler.length, tekil.length];
   .fark { display: grid; gap: 3rem; grid-template-columns: 1fr 1fr; align-items: center; }
   .tik li { position: relative; padding: 1.1rem 1.25rem 1.1rem 3.4rem; background: #fff; border: 1px solid var(--cizgi); border-radius: var(--r); margin-bottom: 0.8rem; font-weight: 500; }
   .tik li::before { content: ''; position: absolute; left: 1.2rem; top: 1.3rem; width: 1.4rem; height: 1.4rem; border-radius: 50%; background: var(--canli) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") center/70% no-repeat; }
+  .filiz path { stroke-dasharray: 700; animation: ciz 2.2s ease-out both; }
+  @keyframes ciz { from { stroke-dashoffset: 700; } to { stroke-dashoffset: 0; } }
+  .sayilar li { transition: transform 0.25s, border-color 0.25s; }
+  .sayilar li:hover { transform: translateY(-3px); border-color: var(--canli); }
+
+  /* JS yoksa .ac görünür kalır */
+  :global(.js) .ac { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+  :global(.js) .ac.gorundu { opacity: 1; transform: none; }
+
+  .sekmeler { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 1.25rem; align-items: start; }
+  .sekme-liste { display: grid; gap: 0.6rem; }
+  .sekme-liste button { display: flex; align-items: center; gap: 0.9rem; width: 100%; min-height: 64px; padding: 0.8rem 1.1rem; font: inherit; font-weight: 600; text-align: left; color: var(--metin); background: #fff; border: 1px solid var(--cizgi); border-radius: var(--r); cursor: pointer; transition: background 0.2s, border-color 0.2s, transform 0.2s; }
+  .sekme-liste .no { margin: 0; flex: none; transition: background 0.2s, color 0.2s; }
+  .sekme-liste button:hover { border-color: var(--canli); transform: translateX(3px); }
+  .sekme-liste button[aria-selected='true'] { background: var(--koyu); border-color: var(--koyu); color: #fff; }
+  .sekme-liste button[aria-selected='true'] .no { background: #fff; }
+  .paneller { display: grid; gap: 1.25rem; }
+  .panel { min-height: 100%; border-left: 4px solid var(--canli); animation: gel 0.35s ease-out; }
+  .panel h3 { font-size: 1.4rem; }
+  @keyframes gel { from { opacity: 0; transform: translateY(8px); } }
+  :global(html:not(.js)) .sekme-liste { display: none; }
+  :global(html:not(.js)) .sekmeler { grid-template-columns: 1fr; }
+
+  .serit { overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
+  .serit-iz { display: flex; gap: 0.9rem; width: max-content; animation: kay 90s linear infinite; }
+  .serit:hover .serit-iz, .serit:focus-within .serit-iz { animation-play-state: paused; }
+  .serit-iz li { flex: none; display: grid; place-items: center; width: 160px; height: 104px; padding: 1rem; background: #fff; border: 1px solid var(--cizgi); border-radius: 12px; }
+  .serit-iz img { max-height: 64px; max-width: 100%; width: auto; object-fit: contain; filter: grayscale(1); opacity: 0.75; transition: filter 0.3s, opacity 0.3s; }
+  .serit-iz li:hover img { filter: none; opacity: 1; }
+  /* ikinci kopya sayesinde -50% kesintisiz döner */
+  @keyframes kay { to { transform: translateX(calc(-50% - 0.45rem)); } }
+
   @media (max-width: 900px) {
-    .hero-ic, .fark { grid-template-columns: 1fr; }
+    .hero-ic, .fark, .sekmeler { grid-template-columns: 1fr; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .filiz path, .panel { animation: none; }
+    :global(.js) .ac { opacity: 1; transform: none; }
+    .serit { mask-image: none; }
+    .serit-iz { animation: none; width: auto; flex-wrap: wrap; }
+    .serit-iz li[aria-hidden], .serit-iz li:nth-child(n + 13) { display: none; }
   }
 </style>

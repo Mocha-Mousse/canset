@@ -1,6 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { icerik, yol, diller } from '../../data/site.js';
+import { icerik, yol, kok, diller } from '../../data/site.js';
 export const getStaticPaths = diller;
 const { lang } = Astro.props;
 const t = icerik[lang];
@@ -17,8 +17,9 @@ const s = t.hizmetSayfa;
 
   <section class="bolum" style="padding-top:2rem">
     <div class="kap izgara iki">
-      {t.hizmetler.map((h) => (
+      {t.hizmetler.map((h, i) => (
         <article class="kart hizmet">
+          <img class="gorsel" src={`${kok}/hizmetler/${String(i + 1).padStart(2, '0')}.jpg`} alt="" width="720" height="480" loading={i < 2 ? 'eager' : 'lazy'} />
           {h.etiket && <span class="rozet">{h.etiket}</span>}
           <h2>{h.ad}</h2>
           {h.alt && <p class="alt-ad-h">{h.alt}</p>}
@@ -31,7 +32,9 @@ const s = t.hizmetSayfa;
 </Base>
 
 <style>
-  .hizmet { display: flex; flex-direction: column; align-items: flex-start; }
+  .hizmet { display: flex; flex-direction: column; align-items: flex-start; overflow: hidden; }
+  .gorsel { align-self: stretch; width: auto; max-width: none; height: 190px; object-fit: cover; margin: -1.75rem -1.75rem 1.5rem; transition: transform 0.5s; }
+  .hizmet:hover .gorsel { transform: scale(1.04); }
   .hizmet h2 { font-size: 1.35rem; margin-bottom: 0.3rem; }
   .hizmet .alt-ad-h { font-size: 0.9rem; font-weight: 600; color: var(--koyu); margin-bottom: 0.6rem; }
   .hizmet p:not(.alt-ad-h) { margin-top: 0.5rem; }

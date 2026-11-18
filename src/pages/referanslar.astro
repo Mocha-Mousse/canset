@@ -1,0 +1,31 @@
+---
+import Base from '../layouts/Base.astro';
+import referanslar from '../data/referanslar.json';
+---
+<Base title="Referanslar" description="CANSET çözüm ortakları ve danışmanlık referansları.">
+  <section class="sayfa-bas">
+    <div class="kap">
+      <p class="ust-yazi">Referanslar</p>
+      <h1>Birlikte çalıştığımız kurumlar</h1>
+      <p class="giris">Kurumsal sürdürülebilirlik danışmanlığı, karbon ayak izi çalışmaları, yaşam döngüsü değerlendirmesi ve eğitim hizmetleri alanlarında çok sayıda kurumla aktif olarak çalışmaktayız.</p>
+    </div>
+  </section>
+
+  {referanslar.map((g) => (
+    <section class="bolum grup">
+      <div class="kap">
+        <h2>{g.title}</h2>
+        <div class="logolar">
+          {g.items.map((r) => r.url
+            ? <a href={r.url} target="_blank" rel="noopener" aria-label={`${r.name} (yeni sekme)`}><img src={r.img} alt={r.name} loading="lazy" /></a>
+            : <span><img src={r.img} alt={r.name} loading="lazy" /></span>)}
+        </div>
+      </div>
+    </section>
+  ))}
+</Base>
+
+<style>
+  .grup { padding: 2rem 0; }
+  .grup h2 { font-size: 1.35rem; margin-bottom: 1.25rem; padding-left: 0.9rem; border-left: 4px solid var(--canli); }
+</style>

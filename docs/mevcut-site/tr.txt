@@ -1,0 +1,665 @@
+===== index.html
+CANSET YAZILIM | Main Page 
+top of page 
+Ana Sayfa 
+Hakkımızda 
+Biz Kimiz? 
+Basında Biz 
+Referanslar 
+Hizmetler 
+Projeler 
+İletişim 
+More 
+Use tab to navigate through the menu items. 
+#2 Hoşgeldiniz! 
+Kurumlara yönelik sürdürülebilirlik danışmanlığı hizmeti veren,  çevresel etki ölçüm/raporlaması yapan ve kurumlara süreç iyileştirme önerileri sunan bir ARGE firmasıyız. Daha fazla bilgi için Hizmetler sayfamızı ziyaret edebilirsiniz. 
+Hizmetler 
+info@can-set.com 
+Tel: 05334271539 
+CANSET Yazılım Çevre Enerji Danışmanlık Hizmetleri Ticaret A.Ş. 
+​ 
+İTOB OSB Mahallesi 10032. Sokak No: 2 Menderes / İZMİR 
+bottom of page
+--- imgs
+https://static.wixstatic.com/media/730be1_dd69b8f07e344075a2394f9a090807f7~mv2.png | a9cb88f201f44edd8389c46474871798.png
+https://static.wixstatic.com/media/11062b_44718aafddf14bffb00dd1c8fb219ab0~mv2.jpg | Temiz Plaj
+https://static.wixstatic.com/media/730be1_dd69b8f07e344075a2394f9a090807f7~mv2.png | a9cb88f201f44edd8389c46474871798.png
+https://static.wixstatic.com/media/870f97661ed14a5bb2d96ecbddec0aed.png | Twitter
+https://static.wixstatic.com/media/aa0402eb9ba2430d9d0620b59556efca.png | LinkedIn
+https://static.wixstatic.com/media/45bce1d726f64f1999c49feae57f6298.png | YouTube
+--- links
+['https://il.linkedin.com/company/wix-com?trk=public_jobs_topcard_logo', 'https://www.twitter.com/wix', 'https://www.youtube.com/user/Wix']
+===== biz.html
+Biz Kimiz? | CANSET YAZILIM 
+top of page 
+Ana Sayfa 
+Hakkımızda 
+Biz Kimiz? 
+Basında Biz 
+Referanslar 
+Hizmetler 
+Projeler 
+İletişim 
+More 
+Use tab to navigate through the menu items. 
+#1 HAKKIMIZDA 
+CANSET Yazılım Enerji Çevre Danışmanlık Ticaret A.Ş. Hakkında 
+CANSET Yazılım Enerji Çevre Danışmanlık Ticaret A.Ş. , firmalara kurumsal sürdürülebilirlik, 
+çevresel etki yönetimi ve veri temelli karar destek çözümleri sunan, güçlü bir AR-GE ve 
+uygulama odağına sahip bir danışmanlık şirketidir. 
+CANSET; sürdürülebilirliği yalnızca bir raporlama faaliyeti olarak değil , strateji, operasyon, 
+teknoloji ve yönetişim süreçlerine entegre edilmesi gereken çok boyutlu bir dönüşüm alanı 
+olarak ele alır. Bu yaklaşım doğrultusunda şirketimiz, hem uluslararası standartlara uyum (ISO 
+14064-1, ISO 14067, ISO 14040-44 vb.) hem de kuruma özgü, uygulanabilir çözümler üretmeye 
+odaklanmaktadır. 
+​ 
+Ne Yapıyoruz? 
+CANSET’in hizmet portföyü dört ana eksende şekillenmektedir: 
+1. Kurumsal Sürdürülebilirlik ve ESG Danışmanlığı 
+Şirketlerin sürdürülebilirlik yolculuklarını; strateji oluşturma, önceliklendirme, hedef belirleme ve 
+uygulamaya geçiş aşamalarını kapsayacak şekilde destekliyoruz. 
+Bu kapsamda farklı sektörlerden kurumlarla uzun soluklu iş birlikleri yürütüyor; sürdürülebilirliği 
+yönetilebilir ve ölçülebilir hale getiriyoruz. 
+2. Karbon ve Çevresel Ayak İzi Çalışmaları 
+Kurumsal ve ürün bazlı sera gazı emisyonlarının hesaplanması, raporlanması ve iyileştirme 
+alanlarının belirlenmesi süreçlerinde uluslararası standartlara uygun danışmanlık sunuyoruz. 
+Özellikle ISO 14064-1 Kurumsal Sera Gazı Envanteri, ISO 14067 Ürün Karbon Ayak İzi ve 
+Yaşam Döngüsü Değerlendirmesi (LCA) çalışmalarında geniş bir referans ağına sahibiz. 
+3. Yaşam Döngüsü Değerlendirmesi ve Ürün Odaklı Analizler 
+Enerji, gıda, kimya, kozmetik ve sanayi sektörleri başta olmak üzere farklı ürün grupları için 
+bilimsel temelli yaşam döngüsü analizleri gerçekleştiriyoruz. 
+Bu çalışmalar sayesinde firmaların ürün portföylerini çevresel etkiler açısından karşılaştırmalarına, 
+iyileştirme fırsatlarını belirlemelerine ve pazara yönelik güçlü argümanlar geliştirmelerine destek 
+oluyoruz. 
+4. Eğitim, Kapasite Geliştirme ve Dijital Çözümler 
+Kurumsal sürdürülebilirlik, karbon yönetimi ve yaşam döngüsü yaklaşımı konularında eğitim ve 
+farkındalık programları düzenliyor; kurum içi yetkinliklerin gelişmesini hedefliyoruz. 
+Ayrıca, sürdürülebilirlik süreçlerini destekleyen yazılım ve dijital araçların geliştirilmesi alanında 
+da aktif olarak çalışıyoruz. 
+​ 
+Neyi Farklı Yapıyoruz? 
+​ ​ 
+Akademik derinliği sahaya ve uygulamaya taşıyoruz. 
+“Herkese uyan tek çözüm” yerine, kuruma özgü yol haritaları geliştiriyoruz. 
+Rapor üretmenin ötesine geçerek, aksiyona dönüşebilir çıktılar sunuyoruz. 
+Sürdürülebilirliği maliyet değil, rekabet ve verimlilik unsuru olarak ele alıyoruz. 
+Kurucu ve Bilimsel Liderlik 
+CANSET’in kurucu ortaklarından ve Yönetim Kurulu Başkanı olan Prof. Dr. Fehmi Görkem Üçtuğ, 
+sürdürülebilirlik, yaşam döngüsü değerlendirmesi ve karbon yönetimi alanlarında akademik ve 
+uygulamalı çalışmalarıyla tanınan bir uzmandır. 
+ODTÜ Kimya Mühendisliği mezunu olan Prof. Dr. Üçtuğ, doktora çalışmalarını Avrupa Birliği 
+Marie Curie Bursu ile İngiltere’de Manchester Üniversitesi’nde tamamlamış; burada sürdürülebilir 
+endüstriyel sistemler ve yaşam döngüsü analizi üzerine çalışmıştır. 
+2024 yılında Profesör unvanını alan Üçtuğ, üniversite-sanayi iş birlikleri ve uluslararası projeler 
+yoluyla edindiği birikimi CANSET çatısı altında kurumsal ve profesyonel hizmetlere 
+dönüştürmektedir. 
+​ 
+Güvenilir Referanslar, Çok Disiplinli Deneyim 
+CANSET; kamu kurumlarından sanayi kuruluşlarına, AR-GE merkezlerinden uluslararası 
+platformlara kadar geniş bir yelpazede çözüm ortağı olarak konumlanmıştır. 
+Kurumsal sürdürülebilirlik danışmanlığı, karbon ayak izi çalışmaları, yaşam döngüsü 
+değerlendirmesi ve eğitim hizmetleri alanlarında çok sayıda kurumla aktif olarak çalışmaktadır. 
+(Detaylı referans listemizi ilgili sekmelerden inceleyebilirsiniz.) 
+​ 
+Yaklaşımımız 
+CANSET olarak hedefimiz; 
+kurumların bugünkü ihtiyaçlarını karşılayan , aynı zamanda yarının regülasyonlarına, pazar 
+beklentilerine ve rekabet koşullarına hazırlayan sürdürülebilirlik çözümleri sunmaktır. 
+Şirketimiz, sürdürülebilirliği bilimsel temelli, ölçülebilir ve yönetilebilir bir süreç olarak ele alır ve 
+bu anlayışı tüm projelerine yansıtır. 
+​ 
+​ 
+​ 
+​ 
+Hizmetler 
+info@can-set.com 
+Tel: 05334271539 
+CANSET Yazılım Çevre Enerji Danışmanlık Hizmetleri Ticaret A.Ş. 
+​ 
+İTOB OSB Mahallesi 10032. Sokak No: 2 Menderes / İZMİR 
+bottom of page
+--- imgs
+https://static.wixstatic.com/media/730be1_dd69b8f07e344075a2394f9a090807f7~mv2.png | a9cb88f201f44edd8389c46474871798.png
+https://static.wixstatic.com/media/1038f18fe9564d16977757a03cc286f8.jpg | Mountaneous Peyzaj
+https://static.wixstatic.com/media/730be1_dd69b8f07e344075a2394f9a090807f7~mv2.png | a9cb88f201f44edd8389c46474871798.png
+https://static.wixstatic.com/media/870f97661ed14a5bb2d96ecbddec0aed.png | Twitter
+https://static.wixstatic.com/media/aa0402eb9ba2430d9d0620b59556efca.png | LinkedIn
+https://static.wixstatic.com/media/45bce1d726f64f1999c49feae57f6298.png | YouTube
+--- links
+['https://il.linkedin.com/company/wix-com?trk=public_jobs_topcard_logo', 'https://www.twitter.com/wix', 'https://www.youtube.com/user/Wix']
+===== basında-biz.html
+Basında Biz | CANSET YAZILIM 
+top of page 
+Ana Sayfa 
+Hakkımızda 
+Biz Kimiz? 
+Basında Biz 
+Referanslar 
+Hizmetler 
+Projeler 
+İletişim 
+More 
+Use tab to navigate through the menu items. 
+#2 Basında Biz 
+"İş dünyasına ‘yeşil’ destek" 
+Bitcoin’in karbon ayak izi altından fazla" 
+"Sürdürülebilir Sohbetler'de, Doç. Dr. Görkem Üçtuğ" 
+“'Türkiye Enerjisini Topluyor' Projesi" 
+Zorlu Enerji Grubu, “Zorlu ile Güneş Enerjisi” kitabını yayınladı 
+Türkiye için en uygun enerji kaynağı araştırmasından 'hidroelektrik' çıktı 
+info@can-set.com 
+Tel: 05334271539 
+CANSET Yazılım Çevre Enerji Danışmanlık Hizmetleri Ticaret A.Ş. 
+​ 
+İTOB OSB Mahallesi 10032. Sokak No: 2 Menderes / İZMİR 
+bottom of page
+--- imgs
+https://static.wixstatic.com/media/730be1_dd69b8f07e344075a2394f9a090807f7~mv2.png | a9cb88f201f44edd8389c46474871798.png
+https://static.wixstatic.com/media/730be1_dd69b8f07e344075a2394f9a090807f7~mv2.png | a9cb88f201f44edd8389c46474871798.png
+https://static.wixstatic.com/media/870f97661ed14a5bb2d96ecbddec0aed.png | Twitter
+https://static.wixstatic.com/media/aa0402eb9ba2430d9d0620b59556efca.png | LinkedIn
+https://static.wixstatic.com/media/45bce1d726f64f1999c49feae57f6298.png | YouTube
+--- links
+['https://il.linkedin.com/company/wix-com?trk=public_jobs_topcard_logo', 'https://uzmanpara.milliyet.com.tr/kap-haberi/basin-bulteni-zorlu-enerji-grubu--zorlu-ile-gunes-enerjisi-kitabini-yayinladi/889704/', 'https://www.aa.com.tr/tr/turkiye/turkiye-icin-en-uygun-enerji-kaynagi-arastirmasindan-hidroelektrik-cikti/1689227', 'https://www.bizimizmir.net/is-dunyasina-yesil-destek-51036', 'https://www.haberler.com/yerel/turkiye-enerjisini-topluyor-projesi-7116472-haberi/', 'https://www.trthaber.com/haber/bilim-teknoloji/bitcoinin-karbon-ayak-izi-altindan-fazla-663872.html', 'https://www.twitter.com/wix', 'https://www.youtube.com/user/Wix', 'https://www.youtube.com/watch?v=qVE3IzJU4gg']
+===== hizmetler.html
+Hizmetler | CANSET YAZILIM 
+top of page 
+Ana Sayfa 
+Hakkımızda 
+Biz Kimiz? 
+Basında Biz 
+Referanslar 
+Hizmetler 
+Projeler 
+İletişim 
+More 
+Use tab to navigate through the menu items. 
+#2 Hizmetler 
+Yaşam Döngüsü Değerlendirmesi 
+(Life Cycle Assessment - LCA) 
+LCA, bir ürün veya hizmete ait yaşam döngüsü boyunca kullanılan her türlü girdi (ham madde, enerji) ve oluşan her türlü çıktıyı (ürün, yan ürün, atık) göz önüne alarak, ISO 14040 ve ISO 14044 standartlarına göre gerçekleştiren bir çevresel etki hesaplama yöntemidir. Bugüne kadar başta enerji ve gıda olmak üzere birçok sektöre yönelik LCA çalışmaları gerçekleştiren ekibimiz , alanının en iyisi yazılımlar vasıtasıyla size LCA konusunda destek vermeye hazırdır. 
+Bilgi Al 
+Ürün Karbon Ayak İzi 
+Özellikle Avrupa Birliği Yeşil Mutabakatının 2023’de resmen ve 2026’da fiilen hayatımıza girecek olmasıyla çok önem kazanan karbon ayak izi, bir ürünün üretimi esnasında gerçekleşen sera gazı salımlarının tespiti için kullanılan bir parametredir. Karbon ayak izi konusunda geniş bir tecrübeye sahip ekibimiz size dilerseniz kapsam 1, dilerseniz kapsam 2, dilerseniz de kapsam 3 seviyesinde ürün karbon ayak izi hesaplama hizmetini uluslararası standartlara uygun yazılımlar kullanarak sunmaya hazırdır. 
+​ 
+Bilgi Al 
+Kurumsal Karbon Ayak İzi 
+Firmamız sadece ürünlerinize yönelik değil, kurumunuzun lojistik ve idari faaliyetlerini de içerecek şekilde bütünleşik kurumsal karbon ayak izi raporlaması da yapmaktadır. Karbon ayak izi konusunda geniş bir tecrübeye sahip ekibimiz size dilerseniz kapsam 1, dilerseniz kapsam 2, dilerseniz de kapsam 3 seviyesinde kurumsal karbon ayak izi hesaplama hizmetini uluslararası standartlara uygun yazılımlar kullanarak sunmaya hazırdır. 
+​ 
+​ 
+Bilgi Al 
+Çevresel Ürün Beyanı 
+​ İngilizcesiyle “Environmental Product Declaration”, ya da kısaca EPD, ürünlerin yaşam döngüleri boyunca ortaya çıkan çevresel etkilerin, şeffaf ve karşılaştırılabilir bir biçimde paylaşılmasını sağlayan, bağımsız otoriteler tarafından doğrulanmış ve tescil edilmiş bir belgedir. Firmamız, operasyonlarınızı yerinde inceleyerek ISO 14025 standartına göre hazırlanması gereken EPD raporunu, alanındaki en kapsamlı yaşam döngüsü değerlendirmesi yazılımlarını kullanarak hazırlar ve doğrulatılması için ilgili firmalara iletir. 
+Bilgi Al 
+Ürün Su Ayak İzi 
+Su ayak izi, bir ürünün üretimi esnasında gerçekleşen toplam su tüketimini tespitinde kullanılan çok önemli bir çevresel sürdürülebilirlik parametresidir. Firmamız sadece ürünlerinize veya hizmetlerinize dair su ayak izini hesaplamakla kalmaz, aynı zamanda bu su ayak izinin yeşil-mavi-gri su dağılımını da sizlere raporlayarak hangi noktalarda ne tür önleyici ve iyileştiri eylemler almanız gerektiği konusunda da size fikir verir. 
+​ 
+Bilgi Al 
+Karbon Saydamlık Projesi 
+Uluslararası adıyla “Carbon Disclosure Project” ya da kısaca CDP olarak da bilinen bu proje, kurumların sera gazı salımları hakkında şeffaf ve kamuoyuna açık bilgi toplamak ve bu bilgilerin sonuçlarını paylaşmak için kurulan uluslararası bir organizasyondur. Firmamız da kurumunuza bu organizasyonun kuralları dahilinde sera gazı salımlarınızı raporlama ve böylece hem kurumsal farkındalığınızı ön plana çıkarmak, hem de sektörünüzdeki diğer firmalara örnek olmak yolunda destek vermeye hazırdır. 
+Bilgi Al 
+Yaşam Döngüsü Değerlendirmesi Eğitimi 
+Firmamız isterseniz çevrimiçi isterseniz de yüzyüze olarak kurumunuz personeline yaşam döngüsü değerlendirmesi, başta karbon ve su ayak izi olmak üzere çevresel sürdürülebilirlik parametrelerinin ölçümü, Yeşil Mutabakat ve karbon ayak izi mevzuatı gibi konularda eğitim vermeye hazırdır. 
+Bilgi Al 
+Ürün Çevresel Ayak İzi 
+Eğer ürünlerinizin veya hizmetlerinizin ayrıntılı bir çevresel etki analizi gerçekleştirmek istiyorsanız, firmamız alanının en iyisi yazılımlar kullanarak size atmosfere, toprağa ve suya yönelik çevresel etkilerin ister ürün, ister de kurum bazında hesaplanması yönünde destek vermeye hazırdır. 
+​ 
+Bilgi Al 
+Sürdürülebilirlik Endeksi Hizmeti 
+Kurumsal sürdürülebilirlik üç temel unsur üzerine inşa edilmiştir: Çevresel (environmental), toplumsal (social) ve de yönetimsel (governance), ya da kısaca ESG. ESG kavramı, kurumların finansal performanslarının yanı sıra çevresel, sosyal ve yönetimsel performanslarını da raporlayarak şeffaf ve kapsamlı bir şekilde değerlendirmelerini sağlar. Türkiye’de Borsa İstanbul Sürdürülebilirlik Endeksi (BIST Sustainability - XUSRD) tarafından gerçekleştirilen ESG denetlemesine yönelik olarak kurumlarınızın bu alandaki belirleyici endeks olan Refinitiv ESG değerlendirmesi sisteminden yeterli puanı alabilmesi ve eksik olan yönlerinizi iyileştirmeye yönelik öneriler geliştirilmesi yönünde firmamız sizlere hizmet vermeye hazırdır. 
+Bilgi Al 
+Süreç Geliştirme Projeleri 
+Firmamızı benzerlerinden ayıran en temel unsurlardan birisi sadece çevresel sürdürülebilirlik parametrelerini tespit edip raporlama hizmeti sunmakla yetinmemesi, aynı zamanda bu çevresel etkilerin azaltılmasına yönelik faaliyetleri ekonomik ve çevresel boyutlarıyla inceleyerek size bir yol haritası hazırlamasıdır. Firmanız arzu ettiğiniz takdirde kurumunuzun faaliyetlerini yerinde inceleyerek size özel çözüm önerileri sunmaya hazırdır. 
+​ 
+​ 
+​ 
+​ 
+​ 
+​ 
+Bilgi Al 
+Kurumsal Sürdürülebilirlik Raporu Hazırlanması 
+Kurumsal sürdürülebilirlik raporları, bir şirketin sürdürülebilirliğin üç temel unsuru olan ekonomik, sosyal ve çevresel sürdürülebilirlik konularındaki performansını şeffaf bir biçimde kamuoyu ve şirket paydaşları ile paylaşmak amacıyla hazırlanır. Şirketler, bu raporlama çalışmasında sürdürülebilirlikle ilgili sorunları, bu konudaki riskleri ve fırsatları, güçlü ve zayıf yanlarını, kendisinin ve paydaşlarının potansiyellerini ele alır. Sürdürülebilirlik raporlarının içerikleri firmanın faaliyet gösterdiği sektör, ürün nitelikleri, şirket büyüklüğü gibi birçok faktör göz önüne alınarak hazırlanmaktadır. CANSET A.Ş. olarak müşterilerimize Türkçe ve İngilizce kurumsal sürdürülebilirlik raporu hazırlanması hizmeti sunmaktayız. 
+Bilgi Al 
+info@can-set.com 
+Tel: 05334271539 
+CANSET Yazılım Çevre Enerji Danışmanlık Hizmetleri Ticaret A.Ş. 
+​ 
+İTOB OSB Mahallesi 10032. Sokak No: 2 Menderes / İZMİR 
+bottom of page
+--- imgs
+https://static.wixstatic.com/media/730be1_dd69b8f07e344075a2394f9a090807f7~mv2.png | a9cb88f201f44edd8389c46474871798.png
+https://static.wixstatic.com/media/11062b_f2b95b9a585c465cb32874fde7df77e8~mv2.jpg | Solar Paneller
+https://static.wixstatic.com/media/11062b_9696f1fc324b418885dfe3cb7b50d626~mv2.jpg | Sıfır Atık Torbası
+https://static.wixstatic.com/media/c1a98d7a20c24abdb2313c9f5c492a1f.jpg | Kumda ayak izleri
+https://static.wixstatic.com/media/47c39fb6e7f245c6af0ec782f3a4364e.jpg | ağaçlar
+https://static.wixstatic.com/media/11062b_5102e57c24434df7b5ce66ed64b979e3~mv2_d_4288_2848_s_4_2.jpg | şelale
+https://static.wixstatic.com/media/c1d112f24a9248d2b180668092820774.jpg | Yeşil Ev
+https://static.wixstatic.com/media/11062b_d842849067904184b20764debb8c761d~mv2.jpg | Doğayla Dostu Modern Bina
+https://static.wixstatic.com/media/11062b_41839d8dad734602af4e4e7ed242709f~mv2_d_3600_2700_s_4_2.jpg | Mahsul Alanının Toplanması
+https://static.wixstatic.com/media/11062b_e454078d2ded40a69b25f4016b234211~mv2.jpg | Yeşil Binalar
+https://static.wixstatic.com/media/11062b_c3c8c677e6cc41debbceb7746b7541b0~mv2.jpg | Pitoresk Park Manzaraları
+https://static.wixstatic.com/media/11062b_5b16118a43e44e6282c9b300df660aca~mv2.jpg | Güzel doğa
+https://static.wixstatic.com/media/730be1_dd69b8f07e344075a2394f9a090807f7~mv2.png | a9cb88f201f44edd8389c46474871798.png
+https://static.wixstatic.com/media/870f97661ed14a5bb2d96ecbddec0aed.png | Twitter
+https://static.wixstatic.com/media/aa0402eb9ba2430d9d0620b59556efca.png | LinkedIn
+https://static.wixstatic.com/media/45bce1d726f64f1999c49feae57f6298.png | YouTube
+--- links
+['https://il.linkedin.com/company/wix-com?trk=public_jobs_topcard_logo', 'https://www.twitter.com/wix', 'https://www.youtube.com/user/Wix']
+===== projeler.html
+Projeler | CANSET YAZILIM 
+top of page 
+Ana Sayfa 
+Hakkımızda 
+Biz Kimiz? 
+Basında Biz 
+Referanslar 
+Hizmetler 
+Projeler 
+İletişim 
+More 
+Use tab to navigate through the menu items. 
+#2 Projeler 
+Bu sayfada firmamız yönetim kurulu başkanı Prof. Dr. Fehmi Görkem Üçtuğ yürütücülüğünde veya danışmanlığında gerçekleştirilmiş karbon ayak izi, yaşam döngüsü değerlendirmesi ve çevresel sürdürülebilirlik projeleri bugünden geçmişe doğru kronolojik olarak sunulmaktadır. 
+SOCAR A.Ş. İzmir Rafinerisinde Üretilen ACN Ürününün Yaşam Döngüsü Değerlendirmesi 
+#5 Türkiye’de Salatalık Turşusu ve Közlenmiş Kapya Biber Üretiminin Yaşam Döngüsü Değerlendirmesi 
+#5 Türkiye’de Nükleer Enerji Kullanımının Avrupa Birliği Yeşil Mutabakatı Kapsamında Demir-Çelik Sektörünün Karbon Ayak İzine Olan Etkisi 
+#5 Bitcoin Üretimiyle Altın Üretiminin Karbon Ayak İzlerinin Yaşam Döngüsü Değerlendirmesi Yöntemiyle Karşılaştırılması 
+Kredi Kayıt Bürosu (KKB) Firmasına Ait Tier 4 Veri Merkezinin Karbon ve Su Ayak İzinin Hesaplanması 
+Kahve Çekirdeği Atığından Biyohidrojen Üretiminin Karbon Ayak İzinin Hesaplanması 
+Türkiye’de Faaliyet Gösteren Akış Tipi Bir Hidroelektrik Santralin Karbon Ayak İzinin Hesaplanması 
+Türk Mutfağı Özelinde Normal, Vejetaryen ve Vegan Beslenmenin Karbon Ayak İzlerinin Karşılaştırılması 
+TAT Gıda A.Ş. Tarafından Üretilen Domates Salçasının Karbon Ayak İzinin Hesaplanması 
+Glutenli ve Glutensiz Makarnanın Karbon Ayak İzlerinin Karşılaştırılması 
+Muz Ağacı Atıklarından Biyogaz Üretiminin Yaşam Döngüsü Değerlendirmesi 
+Zeytinyağı Üretimi Sonucu Açığa Çıkan Atıkların Değerlendirilmesine Dair Farklı Yöntemlerin Karşılaştırmalı Yaşam Döngüsü Değerlendirmesi 
+Farklı Süt Ürünlerinin Karşılaştırmalı Yaşam Döngüsü Değerlendirmesi 
+Türk Yoğurdunun Yaşam Döngüsü Değerlendirmesi 
+Türkiye’de Kullanılan Solar Termal Su Isıtma Sistemlerinin Yaşam Döngüsü Değerlendirmesi 
+Türkiye’de Kullanılan Fotovoltaik Panel-Lityum İyon Pil Hibrit Enerji Üretim ve Depolama Sistemlerinin Yaşam Döngüsü Değerlendirmesi 
+Türkiye’de Kullanılan Elektrik Enerjisi Kaynaklarının Ekonomik, Çevresel ve Sosyal Açılardan Yaşam Döngüsü Değerlendirmesi ve Çok Kriterli Karar Verme Yöntemiyle Kıyaslanması 
+Mikroalglerden Biyodizel Üretiminin Karbon Ayak İzinin Hesaplanması 
+“Türkiye Enerjisini Topluyor” 
+“Enerjimiz Çocuklar İçin” 
+info@can-set.com 
+Tel: 05334271539 
+CANSET Yazılım Çevre Enerji Danışmanlık Hizmetleri Ticaret A.Ş. 
+​ 
+İTOB OSB Mahallesi 10032. Sokak No: 2 Menderes / İZMİR 
+bottom of page
+--- imgs
+https://static.wixstatic.com/media/730be1_dd69b8f07e344075a2394f9a090807f7~mv2.png | a9cb88f201f44edd8389c46474871798.png
+https://static.wixstatic.com/media/730be1_dd69b8f07e344075a2394f9a090807f7~mv2.png | a9cb88f201f44edd8389c46474871798.png
+https://static.wixstatic.com/media/870f97661ed14a5bb2d96ecbddec0aed.png | Twitter
+https://static.wixstatic.com/media/aa0402eb9ba2430d9d0620b59556efca.png | LinkedIn
+https://static.wixstatic.com/media/45bce1d726f64f1999c49feae57f6298.png | YouTube
+--- links
+['https://aiche.onlinelibrary.wiley.com/doi/epdf/10.1002/ep.13716', 'https://ifst.onlinelibrary.wiley.com/doi/10.1111/jfpp.14701', 'https://il.linkedin.com/company/wix-com?trk=public_jobs_topcard_logo', 'https://link.springer.com/article/10.1007/s12393-019-9187-4', 'https://link.springer.com/article/10.1007/s13762-021-03740-1', 'https://uzmanpara.milliyet.com.tr/kap-haberi/basin-bulteni-zorlu-enerji-grubu--zorlu-ile-gunes-enerjisi-kitabini-yayinladi/889704/', 'https://www.aa.com.tr/tr/turkiye/turkiye-icin-en-uygun-enerji-kaynagi-arastirmasindan-hidroelektrik-cikti/1689227', 'https://www.haberler.com/yerel/turkiye-enerjisini-topluyor-projesi-7116472-haberi/', 'https://www.sciencedirect.com/science/article/abs/pii/S0048969717334769?via%3Dihub', 'https://www.sciencedirect.com/science/article/abs/pii/S0048969718323660?via%3Dihub', 'https://www.sciencedirect.com/science/article/abs/pii/S0959652619301441?via%3Dihub', 'https://www.sciencedirect.com/science/article/abs/pii/S2352550919304518?via%3Dihub', 'https://www.sciencedirect.com/science/article/abs/pii/S2352550919304609?via%3Dihub', 'https://www.sciencedirect.com/science/article/abs/pii/S2352550920314263', 'https://www.twitter.com/wix', 'https://www.youtube.com/user/Wix']
+===== referanslar.html
+Referanslar | CANSET YAZILIM 
+top of page 
+Ana Sayfa 
+Hakkımızda 
+Biz Kimiz? 
+Basında Biz 
+Referanslar 
+Hizmetler 
+Projeler 
+İletişim 
+More 
+Use tab to navigate through the menu items. 
+#2 Çözüm Ortaklarımız 
+#2 Kurumsal Sürdürülebilirlik Danışmanlıklarımız 
+#2 ISO 14064-1 Kurumsal Sera Gazı Envanteri Raporlaması Danışmanlıklarımız 
+#2 ISO 14067 Ürün Karbon Ayak İzi Danışmanlıklarımız 
+#2 ISO 14040-44 Yaşam Döngüsü Değerlendirmesi Danışmanlıklarımız 
+#2 Sürdürülebilirlik Eğitimi Danışmanlıklarımız 
+info@can-set.com 
+Tel: 05334271539 
+CANSET Yazılım Çevre Enerji Danışmanlık Hizmetleri Ticaret A.Ş. 
+​ 
+İTOB OSB Mahallesi 10032. Sokak No: 2 Menderes / İZMİR 
+bottom of page
+--- imgs
+https://static.wixstatic.com/media/730be1_dd69b8f07e344075a2394f9a090807f7~mv2.png | a9cb88f201f44edd8389c46474871798.png
+https://static.wixstatic.com/media/730be1_6489a05403184d319d0ff9d48df24843~mv2.png | images.png
+https://static.wixstatic.com/media/730be1_0189ff2e550945939303d034d22695d6~mv2.jpg | gazi.jpg
+https://static.wixstatic.com/media/730be1_ecb944a6442b48b39adc7756a17d42fa~mv2.png | izmir-kalkinma-ajansi-izka-logo-vector.png
+https://static.wixstatic.com/media/730be1_556d86372f9b4116856240a9526c1f8a~mv2.jpg | MEXT logo.jpg
+https://static.wixstatic.com/media/730be1_f52e128b791d4e24b9d2045d60417c13~mv2.png | gta.png
+https://static.wixstatic.com/media/730be1_0c00630034864a4b8ce65fd56ec85d7c~mv2.png | caspel.png
+https://static.wixstatic.com/media/730be1_2e72a01c8bf2447998dda0c98d58234b~mv2.png | D-cube.png
+https://static.wixstatic.com/media/730be1_e7ea0d23c91b4d0397d834c9f58de266~mv2.jpg | 1550655824178.jpg
+https://static.wixstatic.com/media/847cb1_6594c9947283498eb8b4651f6d13df5c~mv2.webp | agronay-logo-1.webp
+https://static.wixstatic.com/media/730be1_9bd63d0000a242db84a0622a6a3ba46d~mv2.webp | image_1080_3.webp
+https://static.wixstatic.com/media/730be1_15a51a44f56e4ba1b3d5103e87c70668~mv2.webp | referans-10-1.webp
+https://static.wixstatic.com/media/730be1_fab1677f634a4bc09e1f1c21a26d33d6~mv2.png | profilo.png
+https://static.wixstatic.com/media/730be1_3117a4b28fc84852b903251d05fc31e4~mv2.jpg | zorlu.jpg
+https://static.wixstatic.com/media/730be1_bb6c32c0835b412d803a0666dafac35e~mv2.png | kkb-turuncu-beyaz-logo.png
+https://static.wixstatic.com/media/730be1_1e87589139584818bcfcb686120d6c41~mv2.jpg | arikan-logo.jpg
+https://static.wixstatic.com/media/730be1_4161e3dfbeb843128d0ed0d3ca093e2c~mv2.jpg | aygersan logo_edited.jpg
+https://static.wixstatic.com/media/730be1_db533485fd134cb0a533e555cc62d84c~mv2.jpg | Dövsan logo.jfif
+https://static.wixstatic.com/media/730be1_bb47fb1e5c6c4a87b48378b879de54eb~mv2.png | hipermak logo.png
+https://static.wixstatic.com/media/730be1_6223d0b6734f49109bee16105f29bda2~mv2.jpg | örnek makina logo.jfif
+https://static.wixstatic.com/media/730be1_e98b1e505eee4d5297c1fbaa6295f1a4~mv2.jpg | prokom logo.jpg
+https://static.wixstatic.com/media/730be1_cbb340538d91401d8b3878c22575c450~mv2.png | stal logo.png
+https://static.wixstatic.com/media/730be1_7aebe0e23712440eb73e9b04c446db90~mv2.png | ttaf logo.png
+https://static.wixstatic.com/media/730be1_e98ca26ea92e4657b15f3c65d6602dfc~mv2.jpeg | arıkazan logo.jpeg
+https://static.wixstatic.com/media/730be1_338c1245ebb34e5380cc1782d563769a~mv2.png | altekma-logo-1.png
+https://static.wixstatic.com/media/730be1_3cf225bdb27b417e8d32d9c346a8929e~mv2.png | Thermoway.png
+https://static.wixstatic.com/media/730be1_bcde03581b824b09bf15e88629da8fc9~mv2.png | Hezarfen.png
+https://static.wixstatic.com/media/730be1_82e2440fbc6c449781c34c26cf2550b5~mv2.png | Lotus.png
+https://static.wixstatic.com/media/730be1_2fc67e49f78b41edaa88e484bd514b4e~mv2.png | çıraylar.png
+https://static.wixstatic.com/media/730be1_19d33cb1a7a64bf2ad6dce926544b8ae~mv2.jpg | Ok-las.jpg
+https://static.wixstatic.com/media/730be1_2ad73ef7c41f45ce8ddf46c29c00737c~mv2.jpg | evly_pharma_cosmetics_logo.jpg
+https://static.wixstatic.com/media/847cb1_40f2ead043d14d21b1aae70dae7ba6ee~mv2.png | images.png
+https://static.wixstatic.com/media/847cb1_6322803d672e4a80b172825f77f96e33~mv2.png | images.png
+https://static.wixstatic.com/media/847cb1_95956639e27c42a6b0ea56cb51b7820f~mv2.png | images.png
+https://static.wixstatic.com/media/847cb1_58c7f5476c7a4681b4323a84c7334784~mv2.png | logo.png
+https://static.wixstatic.com/media/847cb1_c1df507b9d9e4ca78544698ccd32668f~mv2.png | sevallogo-20180926121700.png
+https://static.wixstatic.com/media/847cb1_e342dbc534a845afb8541cdf659a960f~mv2.png | logo.png
+https://static.wixstatic.com/media/847cb1_c359bcc122554ca4ad7ed90607ba9655~mv2.png | images.png
+https://static.wixstatic.com/media/847cb1_a6ec3c5620394c0e8197d3f8915bb68f~mv2.jpg | SARK-BULGARIA.jpg
+https://static.wixstatic.com/media/730be1_338c1245ebb34e5380cc1782d563769a~mv2.png | altekma-logo-1.png
+https://static.wixstatic.com/media/730be1_7b29ad515cef42e19b37b41f44334e3f~mv2.jpg | Özkaya Gıda (Halis Fındık) logo.jpg
+https://static.wixstatic.com/media/847cb1_407f060345cd4c75a7ac8d4adfd275d5~mv2.jpg | favicon.jpg
+https://static.wixstatic.com/media/730be1_4ddc16f2495b4c9799ea9bb8dcb19c64~mv2.jpg | 1636585335351.jpg
+https://static.wixstatic.com/media/730be1_061f70463eb54db8b4de7f91ad2f683e~mv2.jpg | 1d8c2a06656729abc8e779240c40ce84.jpg
+https://static.wixstatic.com/media/730be1_e3ab3241569e417a811d0ce89de01e5e~mv2.jpg | indir.jpg
+https://static.wixstatic.com/media/730be1_c4f861cfbce0432f921a9b639b5cd92c~mv2.jpg | imza_logo.jpg
+https://static.wixstatic.com/media/847cb1_271f39665d3649e6a7c10c824633ed7c~mv2.png | logo.png
+https://static.wixstatic.com/media/730be1_0c325933cab847c98982e97f65b5cd00~mv2.png | images (1).png
+https://static.wixstatic.com/media/730be1_70366b67f0d448e19df1e0b869b15750~mv2.png | Chef Seasons logo.PNG
+https://static.wixstatic.com/media/847cb1_ede78b8fd5bd4f42a36e0c3f4cf7e6e4~mv2.png | istac-logo.png
+https://static.wixstatic.com/media/730be1_cb82629b279349f891285c53ee4775fe~mv2.png | ANKON-CONSULTING-LOGO-ANKON-Consulting-1024x420.png
+https://static.wixstatic.com/media/730be1_b4b07df81b504539986778352144c1f7~mv2.jpg | Theconsalt.jpg
+https://static.wixstatic.com/media/847cb1_c9180181e1564f99af7b5a7319d0c692~mv2.jpg | XJDZ1MQh_400x400.jpg
+https://static.wixstatic.com/media/730be1_ce3afd8440f74b648c6dbe3d29fb6b0c~mv2.jpg | EDGE.jpg
+https://static.wixstatic.com/media/730be1_556d86372f9b4116856240a9526c1f8a~mv2.jpg | MEXT logo.jpg
+https://static.wixstatic.com/media/730be1_ffa5b28e0cd04229b110a5d939fcfd15~mv2.png | Screenshot 2022-12-20 143548.png
+https://static.wixstatic.com/media/847cb1_4ab9412853124ccba24030bd95b97f1a~mv2.png | guncel-logo-2-2.png
+https://static.wixstatic.com/media/730be1_a8aaa44cfe7d41f1bd5593d09d62c309~mv2.png | aosb logo.png
+https://static.wixstatic.com/media/847cb1_ccc2df63e2ca432e99b710d428bc272b~mv2.png | CFCU_Logo_TR.png
+https://static.wixstatic.com/media/847cb1_afd29466a2b74deb912c9f8b6f5388f7~mv2.png | images.png
+https://static.wixstatic.com/media/847cb1_3ed8534f28d14ada9f1502b93a72cabb~mv2.jpg | Ankara_Sanayi_Odası_Logo.jpg
+https://static.wixstatic.com/media/730be1_dd69b8f07e344075a2394f9a090807f7~mv2.png | a9cb88f201f44edd8389c46474871798.png
+https://static.wixstatic.com/media/870f97661ed14a5bb2d96ecbddec0aed.png | Twitter
+https://static.wixstatic.com/media/aa0402eb9ba2430d9d0620b59556efca.png | LinkedIn
+https://static.wixstatic.com/media/45bce1d726f64f1999c49feae57f6298.png | YouTube
+--- links
+['http://www.hezarfenaero.com/en/', 'https://adanaorganize.org.tr/kategori/proje-destek-ofisi/', 'https://agronay.com', 'https://ankon.com.tr', 'https://chefseasons.com/?srsltid=AfmBOop5pwOvCocTVeIKpSM8VCeu5AJQD70RK5XAp8LDTbiIoBGfVaO4', 'https://dovsan.com.tr/tr-TR/AnaSayfa', 'https://edgegroup.ae', 'https://evlylab360.com', 'https://gtalliance.co.uk', 'https://halisfindik.com', 'https://hipermak.com.tr', 'https://il.linkedin.com/company/wix-com?trk=public_jobs_topcard_logo', 'https://izka.org.tr', 'https://izka.org.tr/greentech/', 'https://kalde.com/tr', 'https://lotustechnic.com.tr/tr/', 'https://marsalasoft.com/tr', 'https://sarkbulgaria.com', 'https://sucsr.com', 'https://thepurestsolutions.com/?srsltid=AfmBOoov9gMGFNMfQks0o3f1lV2KfFXWt-mssMwYjqJcGo2oNzs6CbAG', 'https://thepurestsolutions.com/?srsltid=AfmBOopet11W-C-3sP825nvdK05MA88zQ27buEZuI2r_YFiBcteVor7H', 'https://thermoway.com.tr', 'https://www.altekma.com.tr', 'https://www.arikan.com.tr', 'https://www.arikazan.com.tr', 'https://www.aso.org.tr', 'https://www.atatekstil.com.tr', 'https://www.aygersan.com', 'https://www.besiadturkey.com', 'https://www.caspel.com', 'https://www.cfcu.gov.tr/tr', 'https://www.ciraylar.com.tr', 'https://www.dcube.com.tr', 'https://www.deu.edu.tr', 'https://www.eci.com.tr', 'https://www.eliar.com/tr/', 'https://www.eurogida.com.tr', 'https://www.gamateks.com/tr/', 'https://www.gazitto.com.tr', 'https://www.gokdag.com', 'https://www.google.com/search?client=safari&rls=en&q=zorluenerji&ie=UTF-8&oe=UTF-8', 'https://www.imesdilovasi.org', 'https://www.istac.istanbul', 'https://www.kalyonenerji.com', 'https://www.kesir.com.tr', 'https://www.kkb.com.tr', 'https://www.mext.org.tr', 'https://www.ok-las.com', 'https://www.ornekmakina.com', 'https://www.profilo.com/tr/', 'https://www.prokomsan.com', 'https://www.sevalkablo.com', 'https://www.socar.com.tr', 'https://www.stal.com', 'https://www.tat.com.tr', 'https://www.theconsalt.com', 'https://www.ttaf.com.tr', 'https://www.ttso.org.tr', 'https://www.twitter.com/wix', 'https://www.yespan.com/tr/anasayfa/', 'https://www.youtube.com/user/Wix']
+===== iletisim.html
+İletişim | CANSET YAZILIM 
+top of page 
+Ana Sayfa 
+Hakkımızda 
+Biz Kimiz? 
+Basında Biz 
+Referanslar 
+Hizmetler 
+Projeler 
+İletişim 
+More 
+Use tab to navigate through the menu items. 
+#2 Bize Ulaşın 
+CANSET YAZILIM Çevre Enerji Danışmanlık Hizmetleri Ticaret A.Ş. 
+​ 
+İTOB OSB Mahallesi 10032. Sokak No: 2 Menderes / İZMİR 
+​ 
+E-posta: info@can-set.com 
+​ 
+Tel: 05334271539 
+Adınız 
+Soyadınız 
+Email 
+Mesajınız 
+Gönder 
+Bize ulaştığınız için teşekkür ederiz! 
+info@can-set.com 
+Tel: 05334271539 
+CANSET Yazılım Çevre Enerji Danışmanlık Hizmetleri Ticaret A.Ş. 
+​ 
+İTOB OSB Mahallesi 10032. Sokak No: 2 Menderes / İZMİR 
+bottom of page
+--- imgs
+https://static.wixstatic.com/media/730be1_dd69b8f07e344075a2394f9a090807f7~mv2.png | a9cb88f201f44edd8389c46474871798.png
+https://static.wixstatic.com/media/9c4b521dd2404cd5a05ed6115f3a0dc8.png | Twitter
+https://static.wixstatic.com/media/48a2a42b19814efaa824450f23e8a253.png | LinkedIn
+https://static.wixstatic.com/media/a1b09fe8b7f04378a9fe076748ad4a6a.png | YouTube
+https://static.wixstatic.com/media/730be1_dd69b8f07e344075a2394f9a090807f7~mv2.png | a9cb88f201f44edd8389c46474871798.png
+https://static.wixstatic.com/media/870f97661ed14a5bb2d96ecbddec0aed.png | Twitter
+https://static.wixstatic.com/media/aa0402eb9ba2430d9d0620b59556efca.png | LinkedIn
+https://static.wixstatic.com/media/45bce1d726f64f1999c49feae57f6298.png | YouTube
+--- links
+['https://il.linkedin.com/company/wix-com?trk=public_jobs_topcard_logo', 'https://www.twitter.com/wix', 'https://www.youtube.com/user/Wix']
+===== blank-3.html
+SSS | CANSET YAZILIM 
+top of page 
+Ana Sayfa 
+Hakkımızda 
+Biz Kimiz? 
+Basında Biz 
+Referanslar 
+Hizmetler 
+Projeler 
+İletişim 
+More 
+Use tab to navigate through the menu items. 
+#1 SSS 
+Yardıma Hazırım 
+#2 Şirketim değişen pazar koşullarıyla mücadele etmekte zorlanıyor. Piyasadaki yerimizi korumamıza yardımcı olabilir misiniz? 
+Burası SSS Yanıtlar bölümünüzdür. Girdiğiniz metinlerin açık ve net olduğundan emin olun. Kendinize "Bu siteye ilk kez giriyor olsaydım bu yanıtı tamamen anlar mıydım?" sorusunu sorarak yazdıklarınızı gözden geçirin. Sonra gerekirse değişiklik yapın veya detaylandırın. Daha etkili olması için fotoğraf veya video ekleyebilirsiniz. 
+#2 Canset Yazılım ile çalışmanın benim için doğru tercih olduğunu nasıl bilebilirim? 
+Burası SSS Yanıtlar bölümünüzdür. Girdiğiniz metinlerin açık ve net olduğundan emin olun. Kendinize "Bu siteye ilk kez giriyor olsaydım bu yanıtı tamamen anlar mıydım?" sorusunu sorarak yazdıklarınızı gözden geçirin. Sonra gerekirse değişiklik yapın veya detaylandırın. Daha etkili olması için fotoğraf veya video ekleyebilirsiniz. 
+#2 Hizmetlerinizi özel alanlarda uzmanlaşmış şirketlere göre nasıl özelleştiriyorsunuz? 
+Burası SSS Yanıtlar bölümünüzdür. Girdiğiniz metinlerin açık ve net olduğundan emin olun. Kendinize "Bu siteye ilk kez giriyor olsaydım bu yanıtı tamamen anlar mıydım?" sorusunu sorarak yazdıkların ızı gözden geçirin. Sonra gerekirse değişiklik yapın veya detaylandırın. Daha etkili olması için fotoğraf veya video ekleyebilirsiniz. 
+info@can-set.com 
+Tel: 05334271539 
+CANSET Yazılım Çevre Enerji Danışmanlık Hizmetleri Ticaret A.Ş. 
+​ 
+İTOB OSB Mahallesi 10032. Sokak No: 2 Menderes / İZMİR 
+bottom of page
+--- imgs
+https://static.wixstatic.com/media/730be1_dd69b8f07e344075a2394f9a090807f7~mv2.png | a9cb88f201f44edd8389c46474871798.png
+https://static.wixstatic.com/media/730be1_dd69b8f07e344075a2394f9a090807f7~mv2.png | a9cb88f201f44edd8389c46474871798.png
+https://static.wixstatic.com/media/870f97661ed14a5bb2d96ecbddec0aed.png | Twitter
+https://static.wixstatic.com/media/aa0402eb9ba2430d9d0620b59556efca.png | LinkedIn
+https://static.wixstatic.com/media/45bce1d726f64f1999c49feae57f6298.png | YouTube
+--- links
+['https://il.linkedin.com/company/wix-com?trk=public_jobs_topcard_logo', 'https://www.twitter.com/wix', 'https://www.youtube.com/user/Wix']
+===== blog.html
+Blog | CANSET YAZILIM 
+top of page 
+Ana Sayfa 
+Hakkımızda 
+Biz Kimiz? 
+Basında Biz 
+Referanslar 
+Hizmetler 
+Projeler 
+İletişim 
+More 
+Use tab to navigate through the menu items. 
+Tüm Yazılar 
+Ara 
+Henüz bu dilde yayınlanmış bir yazı yok 
+Yayınlanan yazıları burada göreceksiniz. 
+info@can-set.com 
+Tel: 05334271539 
+CANSET Yazılım Çevre Enerji Danışmanlık Hizmetleri Ticaret A.Ş. 
+​ 
+İTOB OSB Mahallesi 10032. Sokak No: 2 Menderes / İZMİR 
+bottom of page
+--- imgs
+https://static.wixstatic.com/media/730be1_dd69b8f07e344075a2394f9a090807f7~mv2.png | a9cb88f201f44edd8389c46474871798.png
+https://static.wixstatic.com/media/730be1_dd69b8f07e344075a2394f9a090807f7~mv2.png | a9cb88f201f44edd8389c46474871798.png
+https://static.wixstatic.com/media/870f97661ed14a5bb2d96ecbddec0aed.png | Twitter
+https://static.wixstatic.com/media/aa0402eb9ba2430d9d0620b59556efca.png | LinkedIn
+https://static.wixstatic.com/media/45bce1d726f64f1999c49feae57f6298.png | YouTube
+--- links
+['https://il.linkedin.com/company/wix-com?trk=public_jobs_topcard_logo', 'https://www.twitter.com/wix', 'https://www.youtube.com/user/Wix']
+===== book-online.html
+Online Randevu | CANSET YAZILIM 
+top of page 
+Ana Sayfa 
+Hakkımızda 
+Biz Kimiz? 
+Basında Biz 
+Referanslar 
+Hizmetler 
+Projeler 
+İletişim 
+More 
+Use tab to navigate through the menu items. 
+Ana Sayfa 
+Hizmetler 
+#1 Hizmetlerimiz 
+Hizmet Bilgileri 
+#2 Tanışma Danışmanlığı 
+1 sa 
+$19,99 ABD doları 
+$19,99 
+Hemen Yer Ayırt 
+#2 Stratejik Planlama Görüşmesi 
+1 sa 
+$19,99 ABD doları 
+$19,99 
+Hemen Yer Ayırt 
+#2 Marka ve Konumlandırma Analizi 
+1 sa 
+$19,99 ABD doları 
+$19,99 
+Hemen Yer Ayırt 
+info@can-set.com 
+Tel: 05334271539 
+CANSET Yazılım Çevre Enerji Danışmanlık Hizmetleri Ticaret A.Ş. 
+​ 
+İTOB OSB Mahallesi 10032. Sokak No: 2 Menderes / İZMİR 
+bottom of page
+--- imgs
+https://static.wixstatic.com/media/730be1_dd69b8f07e344075a2394f9a090807f7~mv2.png | a9cb88f201f44edd8389c46474871798.png
+https://static.wixstatic.com/media/5e960dc55c064a92aeb2aaa31d57cbcb.jpg | 
+https://static.wixstatic.com/media/1d48d8c57a7449499b2cecf09ceda9c1.jpg | 
+https://static.wixstatic.com/media/0141bb700ad54cf2b0457ae50b0704c5.jpg | 
+https://static.wixstatic.com/media/730be1_dd69b8f07e344075a2394f9a090807f7~mv2.png | a9cb88f201f44edd8389c46474871798.png
+https://static.wixstatic.com/media/870f97661ed14a5bb2d96ecbddec0aed.png | Twitter
+https://static.wixstatic.com/media/aa0402eb9ba2430d9d0620b59556efca.png | LinkedIn
+https://static.wixstatic.com/media/45bce1d726f64f1999c49feae57f6298.png | YouTube
+--- links
+['https://il.linkedin.com/company/wix-com?trk=public_jobs_topcard_logo', 'https://www.twitter.com/wix', 'https://www.youtube.com/user/Wix']
+===== service-page_marka-ve-konumlandırma-analizi.html
+Marka ve Konumlandırma Analizi | CANSET YAZILIM 
+top of page 
+Ana Sayfa 
+Hakkımızda 
+Biz Kimiz? 
+Basında Biz 
+Referanslar 
+Hizmetler 
+Projeler 
+İletişim 
+More 
+Use tab to navigate through the menu items. 
+Ana Sayfa 
+Hizmet listesi 
+Marka ve Konumlandırma Analizi 
+#1 Marka ve Konumlandırma Analizi 
+1 sa 1 s 
+$19,99 ABD doları 
+$19,99 Location 1 
+Hemen Yer Ayırt 
+#2 Hizmet Açıklaması 
+Hızlı tempolu iş dünyasında kuruluşların geçerliliklerini ve rekabetçi konumlarını korumak için neler yaptığını ve bu konuda hangi şirketlerin en önde olduğunu inceliyoruz. Ardından müşterilerimizin yapabileceği her tercihin etkilerini anlamak üzere akıllı araçlar ve küresel kaynaklar kullanarak stratejiler geliştiriyoruz. Bu hizmetin size ne şekilde yardımcı olabileceğini görmek için iletişime geçin. 
+#2 İletişim Bilgileri 
+Somewhere in İzmir 
+info@can-set.com 
+Tel: 05334271539 
+CANSET Yazılım Çevre Enerji Danışmanlık Hizmetleri Ticaret A.Ş. 
+​ 
+İTOB OSB Mahallesi 10032. Sokak No: 2 Menderes / İZMİR 
+bottom of page
+--- imgs
+https://static.wixstatic.com/media/730be1_dd69b8f07e344075a2394f9a090807f7~mv2.png | a9cb88f201f44edd8389c46474871798.png
+https://static.wixstatic.com/media/730be1_dd69b8f07e344075a2394f9a090807f7~mv2.png | a9cb88f201f44edd8389c46474871798.png
+https://static.wixstatic.com/media/870f97661ed14a5bb2d96ecbddec0aed.png | Twitter
+https://static.wixstatic.com/media/aa0402eb9ba2430d9d0620b59556efca.png | LinkedIn
+https://static.wixstatic.com/media/45bce1d726f64f1999c49feae57f6298.png | YouTube
+--- links
+['https://il.linkedin.com/company/wix-com?trk=public_jobs_topcard_logo', 'https://www.twitter.com/wix', 'https://www.youtube.com/user/Wix']
+===== service-page_stratejik-planlama-görüşmesi.html
+Stratejik Planlama Görüşmesi | CANSET YAZILIM 
+top of page 
+Ana Sayfa 
+Hakkımızda 
+Biz Kimiz? 
+Basında Biz 
+Referanslar 
+Hizmetler 
+Projeler 
+İletişim 
+More 
+Use tab to navigate through the menu items. 
+Ana Sayfa 
+Hizmet listesi 
+Stratejik Planlama Görüşmesi 
+#1 Stratejik Planlama Görüşmesi 
+1 sa 1 s 
+$19,99 ABD doları 
+$19,99 Location 1 
+Hemen Yer Ayırt 
+#2 Hizmet Açıklaması 
+İşletmenizi büyütmek istiyor, ancak nasıl yapacağınızı bilmiyor musunuz? Bir sonraki projenizde planlama veya uygulama desteğine mi ihtiyacınız var? Size yol göstermemize izin verin. Her kuruluşun küçük değişikliklerle ilerlemesi mümkündür, ancak günümüzün hızla gelişen ortamında kendinizi geleceğe hazırlamak için risk almanız ve iç görülü kararlar vermeniz gerekir. 
+#2 İletişim Bilgileri 
+Somewhere in İzmir 
+info@can-set.com 
+Tel: 05334271539 
+CANSET Yazılım Çevre Enerji Danışmanlık Hizmetleri Ticaret A.Ş. 
+​ 
+İTOB OSB Mahallesi 10032. Sokak No: 2 Menderes / İZMİR 
+bottom of page
+--- imgs
+https://static.wixstatic.com/media/730be1_dd69b8f07e344075a2394f9a090807f7~mv2.png | a9cb88f201f44edd8389c46474871798.png
+https://static.wixstatic.com/media/730be1_dd69b8f07e344075a2394f9a090807f7~mv2.png | a9cb88f201f44edd8389c46474871798.png
+https://static.wixstatic.com/media/870f97661ed14a5bb2d96ecbddec0aed.png | Twitter
+https://static.wixstatic.com/media/aa0402eb9ba2430d9d0620b59556efca.png | LinkedIn
+https://static.wixstatic.com/media/45bce1d726f64f1999c49feae57f6298.png | YouTube
+--- links
+['https://il.linkedin.com/company/wix-com?trk=public_jobs_topcard_logo', 'https://www.twitter.com/wix', 'https://www.youtube.com/user/Wix']
+===== service-page_tanışma-danışmanlığı.html
+Tanışma Danışmanlığı | CANSET YAZILIM 
+top of page 
+Ana Sayfa 
+Hakkımızda 
+Biz Kimiz? 
+Basında Biz 
+Referanslar 
+Hizmetler 
+Projeler 
+İletişim 
+More 
+Use tab to navigate through the menu items. 
+Ana Sayfa 
+Hizmet listesi 
+Tanışma Danışmanlığı 
+#1 Tanışma Danışmanlığı 
+1 sa 1 s 
+$19,99 ABD doları 
+$19,99 Location 1 
+Hemen Yer Ayırt 
+#2 Hizmet Açıklaması 
+Çalışanlarımız, yılların verdiği deneyimle işinizi bir üst seviyeye taşıyacak yetenek ve uzmanlığa sahiptir. Canset Yazılım olarak süreçlerinizi ve stratejilerinizi, dolayısıyla şirketinizi dönüştürmek üzere iç görü ve becerilerimizi birleştiriyoruz. Müşterilerimizin işletmelerini yapılandırma ve yönetme şekillerini geliştirmelerine yardımcı olmanın gururunu yaşıyoruz. 
+#2 İletişim Bilgileri 
+Somewhere in İzmir 
+info@can-set.com 
+Tel: 05334271539 
+CANSET Yazılım Çevre Enerji Danışmanlık Hizmetleri Ticaret A.Ş. 
+​ 
+İTOB OSB Mahallesi 10032. Sokak No: 2 Menderes / İZMİR 
+bottom of page
+--- imgs
+https://static.wixstatic.com/media/730be1_dd69b8f07e344075a2394f9a090807f7~mv2.png | a9cb88f201f44edd8389c46474871798.png
+https://static.wixstatic.com/media/730be1_dd69b8f07e344075a2394f9a090807f7~mv2.png | a9cb88f201f44edd8389c46474871798.png
+https://static.wixstatic.com/media/870f97661ed14a5bb2d96ecbddec0aed.png | Twitter
+https://static.wixstatic.com/media/aa0402eb9ba2430d9d0620b59556efca.png | LinkedIn
+https://static.wixstatic.com/media/45bce1d726f64f1999c49feae57f6298.png | YouTube
+--- links
+['https://il.linkedin.com/company/wix-com?trk=public_jobs_topcard_logo', 'https://www.twitter.com/wix', 'https://www.youtube.com/user/Wix']

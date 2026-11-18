@@ -1,0 +1,31 @@
+---
+import Base from '../layouts/Base.astro';
+import { basin } from '../data/site.js';
+---
+<Base title="Basında Biz" description="CANSET ve Prof. Dr. Fehmi Görkem Üçtuğ ile ilgili basında çıkan haberler.">
+  <section class="sayfa-bas">
+    <div class="kap">
+      <p class="ust-yazi">Hakkımızda</p>
+      <h1>Basında Biz</h1>
+    </div>
+  </section>
+
+  <section class="bolum" style="padding-top:2rem">
+    <div class="kap izgara uc">
+      {basin.map((b) => (
+        <a class="kart haber" href={b.url} target="_blank" rel="noopener">
+          <span class="rozet">{b.kaynak}</span>
+          <h2>{b.ad}</h2>
+          <span class="git">Habere git ↗</span>
+        </a>
+      ))}
+    </div>
+  </section>
+</Base>
+
+<style>
+  .haber { display: flex; flex-direction: column; align-items: flex-start; text-decoration: none; color: var(--metin); transition: border-color 0.2s, transform 0.2s; }
+  .haber:hover { border-color: var(--canli); transform: translateY(-2px); }
+  .haber h2 { font-size: 1.2rem; line-height: 1.35; letter-spacing: -0.01em; }
+  .git { margin-top: auto; padding-top: 1rem; font-weight: 700; font-size: 0.92rem; color: var(--koyu); }
+</style>

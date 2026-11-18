@@ -1,0 +1,36 @@
+---
+import Base from '../layouts/Base.astro';
+import { projeler } from '../data/site.js';
+---
+<Base title="Projeler" description="Karbon ayak izi, yaşam döngüsü değerlendirmesi ve çevresel sürdürülebilirlik projeleri.">
+  <section class="sayfa-bas">
+    <div class="kap">
+      <p class="ust-yazi">Projeler</p>
+      <h1>Projeler</h1>
+      <p class="giris">Bu sayfada firmamız yönetim kurulu başkanı Prof. Dr. Fehmi Görkem Üçtuğ yürütücülüğünde veya danışmanlığında gerçekleştirilmiş karbon ayak izi, yaşam döngüsü değerlendirmesi ve çevresel sürdürülebilirlik projeleri bugünden geçmişe doğru kronolojik olarak sunulmaktadır.</p>
+    </div>
+  </section>
+
+  <section class="bolum" style="padding-top:2rem">
+    <ol class="kap liste">
+      {projeler.map((p) => (
+        <li>
+          <span>{p.ad}</span>
+          {p.url && <a href={p.url} target="_blank" rel="noopener" aria-label={`${p.ad} – kaynağı aç (yeni sekme)`}>Kaynak ↗</a>}
+        </li>
+      ))}
+    </ol>
+  </section>
+</Base>
+
+<style>
+  .liste { counter-reset: p; padding: 0; list-style: none; max-width: 60rem; }
+  .liste li { counter-increment: p; display: grid; grid-template-columns: 3rem 1fr auto; gap: 1rem; align-items: center; padding: 1.15rem 0; border-bottom: 1px solid var(--cizgi); font-weight: 500; }
+  .liste li::before { content: counter(p, decimal-leading-zero); font-weight: 700; color: #0b7a2a; font-variant-numeric: tabular-nums; }
+  .liste a { font-size: 0.92rem; font-weight: 700; text-decoration: none; white-space: nowrap; padding: 0.6rem 0.9rem; border: 1px solid var(--cizgi); border-radius: 999px; background: #fff; }
+  .liste a:hover { border-color: var(--canli); background: var(--acik); }
+  @media (max-width: 600px) {
+    .liste li { grid-template-columns: 2.2rem 1fr; }
+    .liste a { grid-column: 2; justify-self: start; }
+  }
+</style>

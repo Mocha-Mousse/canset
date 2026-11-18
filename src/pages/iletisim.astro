@@ -1,0 +1,63 @@
+---
+import Base from '../layouts/Base.astro';
+import { sirket } from '../data/site.js';
+---
+<Base title="İletişim" description="CANSET ile iletişime geçin: e-posta, telefon ve adres bilgileri.">
+  <section class="sayfa-bas">
+    <div class="kap">
+      <p class="ust-yazi">İletişim</p>
+      <h1>Bize Ulaşın</h1>
+    </div>
+  </section>
+
+  <section class="bolum" style="padding-top:2rem">
+    <div class="kap izgara iki">
+      <div class="kart">
+        <h2>{sirket.ad}</h2>
+        <dl>
+          <dt>Adres</dt><dd>{sirket.adres}</dd>
+          <dt>E-posta</dt><dd><a href={`mailto:${sirket.eposta}`}>{sirket.eposta}</a></dd>
+          <dt>Tel</dt><dd><a href={`tel:${sirket.tel}`}>{sirket.telGorunen}</a></dd>
+        </dl>
+      </div>
+
+      <!-- ponytail: form sunucusu yok; gönderim ziyaretçinin e-posta uygulamasını açar. Form servisi/endpoint seçilince action değişsin. -->
+      <form class="kart" id="form">
+        <div class="ikili">
+          <label>Adınız <input name="ad" autocomplete="given-name" required /></label>
+          <label>Soyadınız <input name="soyad" autocomplete="family-name" required /></label>
+        </div>
+        <label>Email <input name="email" type="email" autocomplete="email" required /></label>
+        <label>Mesajınız <textarea name="mesaj" rows="6" required></textarea></label>
+        <button class="dugme" type="submit">Gönder</button>
+        <p class="not">Gönder’e bastığınızda mesajınız e-posta uygulamanızda hazırlanır.</p>
+      </form>
+    </div>
+  </section>
+</Base>
+
+<script is:inline define:vars={{ eposta: sirket.eposta }}>
+  const f = document.getElementById('form');
+  const konu = new URLSearchParams(location.search).get('konu');
+  if (konu) f.mesaj.value = `${konu} hakkında bilgi almak istiyorum.\n\n`;
+  f.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const govde = `${f.mesaj.value}\n\n${f.ad.value} ${f.soyad.value}\n${f.email.value}`;
+    location.href = `mailto:${eposta}?subject=${encodeURIComponent(konu || 'Web sitesi iletişim formu')}&body=${encodeURIComponent(govde)}`;
+  });
+</script>
+
+<style>
+  h2 { font-size: 1.25rem; line-height: 1.35; }
+  dl { margin: 1.5rem 0 0; }
+  dt { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #0b7a2a; }
+  dd { margin: 0.15rem 0 1.25rem; font-size: 1.1rem; font-weight: 500; }
+  form { display: grid; gap: 1rem; }
+  .ikili { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  label { display: grid; gap: 0.35rem; font-weight: 600; font-size: 0.95rem; }
+  input, textarea { font: inherit; font-weight: 400; padding: 0.75rem 0.9rem; min-height: 46px; border: 1px solid #b9cbbf; border-radius: 10px; background: #fff; color: var(--metin); width: 100%; }
+  input:focus-visible, textarea:focus-visible { outline: 3px solid var(--canli); outline-offset: 1px; border-color: var(--koyu); }
+  button { cursor: pointer; font: inherit; font-weight: 600; justify-self: start; }
+  .not { font-size: 0.87rem; margin: 0; }
+  @media (max-width: 520px) { .ikili { grid-template-columns: 1fr; } }
+</style>

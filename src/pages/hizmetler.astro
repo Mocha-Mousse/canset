@@ -1,0 +1,36 @@
+---
+import Base from '../layouts/Base.astro';
+import { hizmetler } from '../data/site.js';
+---
+<Base title="Hizmetler" description="Yaşam döngüsü değerlendirmesi (LCA), ürün ve kurumsal karbon ayak izi, EPD, su ayak izi, CDP, ESG ve sürdürülebilirlik raporlaması hizmetleri.">
+  <section class="sayfa-bas">
+    <div class="kap">
+      <p class="ust-yazi">Hizmetler</p>
+      <h1>Ölçümden yol haritasına, uçtan uca destek</h1>
+      <p class="giris">Çevresel etkilerinizi uluslararası standartlara uygun biçimde hesaplıyor, raporluyor ve azaltılmasına yönelik size özel çözüm önerileri sunuyoruz.</p>
+    </div>
+  </section>
+
+  <section class="bolum" style="padding-top:2rem">
+    <div class="kap izgara iki">
+      {hizmetler.map((h) => (
+        <article class="kart hizmet">
+          {h.etiket && <span class="rozet">{h.etiket}</span>}
+          <h2>{h.ad}</h2>
+          {h.alt && <p class="alt-ad-h">{h.alt}</p>}
+          <p>{h.metin}</p>
+          <a href={`/iletisim?konu=${encodeURIComponent(h.ad)}`} aria-label={`${h.ad} hakkında bilgi al`}>Bilgi Al →</a>
+        </article>
+      ))}
+    </div>
+  </section>
+</Base>
+
+<style>
+  .hizmet { display: flex; flex-direction: column; align-items: flex-start; }
+  .hizmet h2 { font-size: 1.35rem; margin-bottom: 0.3rem; }
+  .hizmet .alt-ad-h { font-size: 0.9rem; font-weight: 600; color: var(--koyu); margin-bottom: 0.6rem; }
+  .hizmet p:not(.alt-ad-h) { margin-top: 0.5rem; }
+  .hizmet a { margin-top: auto; padding-top: 1rem; font-weight: 700; text-decoration: none; min-height: 44px; display: inline-flex; align-items: center; }
+  .hizmet a:hover { text-decoration: underline; }
+</style>

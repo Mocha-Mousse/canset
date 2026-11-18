@@ -122,7 +122,7 @@ const sayilar = [t.hizmetler.length, t.projeler.length, tekil.length];
   const say = (el: HTMLElement) => {
     const hedef = Number(el.dataset.say), t0 = performance.now();
     const adim = (t: number) => {
-      const k = Math.min((t - t0) / 1200, 1);
+      const k = Math.min((t - t0) / 3000, 1);
       el.textContent = String(Math.round(hedef * (1 - (1 - k) ** 3)));
       if (k < 1) requestAnimationFrame(adim);
     };
@@ -149,7 +149,7 @@ const sayilar = [t.hizmetler.length, t.projeler.length, tekil.length];
   .fark { display: grid; gap: 3rem; grid-template-columns: 1fr 1fr; align-items: center; }
   .tik li { position: relative; padding: 1.1rem 1.25rem 1.1rem 3.4rem; background: #fff; border: 1px solid var(--cizgi); border-radius: var(--r); margin-bottom: 0.8rem; font-weight: 500; }
   .tik li::before { content: ''; position: absolute; left: 1.2rem; top: 1.3rem; width: 1.4rem; height: 1.4rem; border-radius: 50%; background: var(--canli) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") center/70% no-repeat; }
-  .filiz path { stroke-dasharray: 700; animation: ciz 2.2s ease-out both; }
+  .filiz path { stroke-dasharray: 700; animation: ciz 5s ease-in-out 0.4s both; }
   @keyframes ciz { from { stroke-dashoffset: 700; } to { stroke-dashoffset: 0; } }
   .sayilar li { transition: transform 0.25s, border-color 0.25s; }
   .sayilar li:hover { transform: translateY(-3px); border-color: var(--canli); }

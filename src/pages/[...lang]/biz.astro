@@ -1,0 +1,70 @@
+---
+import Base from '../../layouts/Base.astro';
+import { icerik, yol, diller } from '../../data/site.js';
+export const getStaticPaths = diller;
+const { lang } = Astro.props;
+const t = icerik[lang];
+const a = t.about;
+---
+<Base lang={lang} title={a.baslik} description={a.aciklama}>
+  <section class="sayfa-bas">
+    <div class="kap">
+      <p class="ust-yazi">{a.baslik}</p>
+      <h1>{a.h1}</h1>
+      <p class="giris">{a.giris}</p>
+    </div>
+  </section>
+
+  <section class="bolum" style="padding-top:2rem">
+    <div class="kap dar"><p>{a.metin}</p></div>
+  </section>
+
+  <section class="bolum tonlu">
+    <div class="kap">
+      <p class="ust-yazi">{a.neUst}</p>
+      <h2>{a.neBaslik}</h2>
+      <div class="izgara iki" style="margin-top:2rem">
+        {t.eksenler.map((e, i) => (
+          <article class="kart">
+            <span class="no">{i + 1}</span>
+            <h3>{e.ad}</h3>
+            {e.metin.map((p) => <p>{p}</p>)}
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bolum">
+    <div class="kap">
+      <p class="ust-yazi">{a.farkUst}</p>
+      <div class="izgara iki" style="margin-top:1.5rem">
+        {t.farklar.map((f) => <div class="kart"><h3 style="margin:0;font-weight:600">{f}</h3></div>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="bolum tonlu">
+    <div class="kap dar">
+      <p class="ust-yazi">{a.liderUst}</p>
+      <h2>{a.liderAd}</h2>
+      {a.lider.map((p) => <p>{p}</p>)}
+    </div>
+  </section>
+
+  <section class="bolum">
+    <div class="kap izgara iki">
+      <div>
+        <p class="ust-yazi">{a.refUst}</p>
+        <h2>{a.refBaslik}</h2>
+        {a.ref.map((p) => <p>{p}</p>)}
+        <a class="dugme cizgili" href={yol(lang, '/referanslar')}>{a.refDugme}</a>
+      </div>
+      <div>
+        <p class="ust-yazi">{a.yaklasimUst}</p>
+        <h2>{a.yaklasimBaslik}</h2>
+        {a.yaklasim.map((p) => <p>{p}</p>)}
+      </div>
+    </div>
+  </section>
+</Base>

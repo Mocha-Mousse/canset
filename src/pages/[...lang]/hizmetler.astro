@@ -1,25 +1,29 @@
 ---
-import Base from '../layouts/Base.astro';
-import { hizmetler } from '../data/site.js';
+import Base from '../../layouts/Base.astro';
+import { icerik, yol, diller } from '../../data/site.js';
+export const getStaticPaths = diller;
+const { lang } = Astro.props;
+const t = icerik[lang];
+const s = t.hizmetSayfa;
 ---
-<Base title="Hizmetler" description="Yaşam döngüsü değerlendirmesi (LCA), ürün ve kurumsal karbon ayak izi, EPD, su ayak izi, CDP, ESG ve sürdürülebilirlik raporlaması hizmetleri.">
+<Base lang={lang} title={s.baslik} description={s.aciklama}>
   <section class="sayfa-bas">
     <div class="kap">
-      <p class="ust-yazi">Hizmetler</p>
-      <h1>Ölçümden yol haritasına, uçtan uca destek</h1>
-      <p class="giris">Çevresel etkilerinizi uluslararası standartlara uygun biçimde hesaplıyor, raporluyor ve azaltılmasına yönelik size özel çözüm önerileri sunuyoruz.</p>
+      <p class="ust-yazi">{s.baslik}</p>
+      <h1>{s.h1}</h1>
+      <p class="giris">{s.giris}</p>
     </div>
   </section>
 
   <section class="bolum" style="padding-top:2rem">
     <div class="kap izgara iki">
-      {hizmetler.map((h) => (
+      {t.hizmetler.map((h) => (
         <article class="kart hizmet">
           {h.etiket && <span class="rozet">{h.etiket}</span>}
           <h2>{h.ad}</h2>
           {h.alt && <p class="alt-ad-h">{h.alt}</p>}
           <p>{h.metin}</p>
-          <a href={`/iletisim?konu=${encodeURIComponent(h.ad)}`} aria-label={`${h.ad} hakkında bilgi al`}>Bilgi Al →</a>
+          <a href={`${yol(lang, '/iletisim')}?konu=${encodeURIComponent(h.ad)}`} aria-label={t.ui.bilgiAlEtiket(h.ad)}>{t.ui.bilgiAl} →</a>
         </article>
       ))}
     </div>

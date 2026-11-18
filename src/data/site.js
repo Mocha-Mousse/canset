@@ -1,139 +1,391 @@
-// Metinler mevcut can-set.com sitesinden alınmıştır (ham arşiv: docs/mevcut-site/).
+// Metinler mevcut can-set.com sitesinden (TR ve EN) alınmıştır; ham arşiv: docs/mevcut-site/.
+
+// GitHub Pages gibi alt dizinde yayın için kök yol (BASE_PATH ortam değişkeni, bkz. astro.config.mjs)
+export const kok = import.meta.env.BASE_URL.replace(/\/$/, '');
+export const yol = (lang, p = '') => `${kok}${lang === 'en' ? '/en' : ''}${p}` || '/';
+// [...lang] rotaları için: kök (tr) ve /en
+export const diller = () => [
+  { params: { lang: undefined }, props: { lang: 'tr' } },
+  { params: { lang: 'en' }, props: { lang: 'en' } },
+];
+
 export const sirket = {
-  ad: 'CANSET Yazılım Çevre Enerji Danışmanlık Hizmetleri Ticaret A.Ş.',
   adres: 'İTOB OSB Mahallesi 10032. Sokak No: 2 Menderes / İZMİR',
   eposta: 'info@can-set.com',
   tel: '05334271539',
   telGorunen: '0533 427 15 39',
 };
 
-export const menu = [
-  { href: '/biz', ad: 'Hakkımızda' },
-  { href: '/hizmetler', ad: 'Hizmetler' },
-  { href: '/projeler', ad: 'Projeler' },
-  { href: '/referanslar', ad: 'Referanslar' },
-  { href: '/basında-biz', ad: 'Basında Biz' },
+const projeUrl = [
+  null,
+  'https://link.springer.com/article/10.1007/s13762-021-03740-1',
+  null,
+  null,
+  null,
+  null,
+  'https://aiche.onlinelibrary.wiley.com/doi/epdf/10.1002/ep.13716',
+  'https://www.sciencedirect.com/science/article/abs/pii/S2352550920314263',
+  null,
+  'https://ifst.onlinelibrary.wiley.com/doi/10.1111/jfpp.14701',
+  'https://www.sciencedirect.com/science/article/abs/pii/S2352550919304609',
+  'https://www.sciencedirect.com/science/article/abs/pii/S2352550919304518',
+  'https://link.springer.com/article/10.1007/s12393-019-9187-4',
+  'https://www.sciencedirect.com/science/article/abs/pii/S0959652619301441',
+  'https://www.sciencedirect.com/science/article/abs/pii/S0048969717334769',
+  'https://www.sciencedirect.com/science/article/abs/pii/S0048969718323660',
+  'https://www.aa.com.tr/tr/turkiye/turkiye-icin-en-uygun-enerji-kaynagi-arastirmasindan-hidroelektrik-cikti/1689227',
+  null,
+  'https://www.haberler.com/yerel/turkiye-enerjisini-topluyor-projesi-7116472-haberi/',
+  'https://uzmanpara.milliyet.com.tr/kap-haberi/basin-bulteni-zorlu-enerji-grubu--zorlu-ile-gunes-enerjisi-kitabini-yayinladi/889704/',
 ];
 
-export const eksenler = [
-  {
-    ad: 'Kurumsal Sürdürülebilirlik ve ESG Danışmanlığı',
-    metin: [
+const basinKaynak = [
+  { kaynak: 'Bizim İzmir', url: 'https://www.bizimizmir.net/is-dunyasina-yesil-destek-51036' },
+  { kaynak: 'TRT Haber', url: 'https://www.trthaber.com/haber/bilim-teknoloji/bitcoinin-karbon-ayak-izi-altindan-fazla-663872.html' },
+  { kaynak: 'YouTube', url: 'https://www.youtube.com/watch?v=qVE3IzJU4gg' },
+  { kaynak: 'Haberler.com', url: 'https://www.haberler.com/yerel/turkiye-enerjisini-topluyor-projesi-7116472-haberi/' },
+  { kaynak: 'Milliyet Uzmanpara', url: 'https://uzmanpara.milliyet.com.tr/kap-haberi/basin-bulteni-zorlu-enerji-grubu--zorlu-ile-gunes-enerjisi-kitabini-yayinladi/889704/' },
+  { kaynak: 'Anadolu Ajansı', url: 'https://www.aa.com.tr/tr/turkiye/turkiye-icin-en-uygun-enerji-kaynagi-arastirmasindan-hidroelektrik-cikti/1689227' },
+];
+
+const tr = {
+  sirketAd: 'CANSET Yazılım Çevre Enerji Danışmanlık Hizmetleri Ticaret A.Ş.',
+  menu: [
+    { href: '/biz', ad: 'Hakkımızda' },
+    { href: '/hizmetler', ad: 'Hizmetler' },
+    { href: '/projeler', ad: 'Projeler' },
+    { href: '/referanslar', ad: 'Referanslar' },
+    { href: '/basında-biz', ad: 'Basında Biz' },
+  ],
+  ui: {
+    siteBaslik: 'CANSET | Sürdürülebilirlik Danışmanlığı',
+    aciklama: 'Kurumsal sürdürülebilirlik danışmanlığı, karbon ayak izi, yaşam döngüsü değerlendirmesi ve çevresel etki raporlaması.',
+    atla: 'İçeriğe geç', anaSayfa: 'CANSET ana sayfa', anaMenu: 'Ana menü', menu: 'Menü',
+    iletisim: 'İletişim', site: 'Site', telif: 'Tüm hakları saklıdır.',
+    digerDil: 'English', digerDilEtiket: 'Switch to English',
+    bilgiAl: 'Bilgi Al', bilgiAlEtiket: (h) => `${h} hakkında bilgi al`,
+    kaynak: 'Kaynak', kaynakEtiket: (p) => `${p} – kaynağı aç (yeni sekme)`,
+    habereGit: 'Habere git', yeniSekme: 'yeni sekme',
+  },
+  home: {
+    ustYazi: 'Sürdürülebilirlik danışmanlığı · AR-GE',
+    h1: ['Sürdürülebilirliği ', 'ölçülebilir', ' ve yönetilebilir kılıyoruz.'],
+    giris: 'Kurumlara yönelik sürdürülebilirlik danışmanlığı hizmeti veren, çevresel etki ölçüm/raporlaması yapan ve kurumlara süreç iyileştirme önerileri sunan bir AR-GE firmasıyız.',
+    hizmetler: 'Hizmetler', ulasin: 'Bize Ulaşın',
+    sayilarEtiket: 'Rakamlarla CANSET',
+    sayilar: ['hizmet başlığı', 'yayımlanan proje', 'referans ve çözüm ortağı'],
+    neUst: 'Ne yapıyoruz?', neBaslik: 'Hizmet portföyümüz dört ana eksende şekillenir', tumHizmetler: 'Tüm hizmetleri inceleyin',
+    farkUst: 'Neyi farklı yapıyoruz?', farkBaslik: 'Rapor üretmenin ötesinde, aksiyona dönüşen çıktılar',
+    farkMetin: 'CANSET; sürdürülebilirliği yalnızca bir raporlama faaliyeti olarak değil, strateji, operasyon, teknoloji ve yönetişim süreçlerine entegre edilmesi gereken çok boyutlu bir dönüşüm alanı olarak ele alır.',
+    hakkimizda: 'Hakkımızda',
+    refUst: 'Referanslar', refBaslik: 'Güvenilir referanslar, çok disiplinli deneyim',
+    refMetin: 'CANSET; kamu kurumlarından sanayi kuruluşlarına, AR-GE merkezlerinden uluslararası platformlara kadar geniş bir yelpazede çözüm ortağı olarak konumlanmıştır.',
+    tumRef: 'Tüm referanslar',
+    ctaBaslik: 'Projenizi konuşalım',
+    ctaMetin: 'Kurumunuzun bugünkü ihtiyaçlarını karşılayan, yarının regülasyonlarına hazırlayan çözümler için bize ulaşın.',
+  },
+  about: {
+    baslik: 'Hakkımızda', h1: 'Biz Kimiz?',
+    aciklama: 'CANSET; kurumsal sürdürülebilirlik, çevresel etki yönetimi ve veri temelli karar destek çözümleri sunan, AR-GE odaklı bir danışmanlık şirketidir.',
+    giris: 'CANSET Yazılım Enerji Çevre Danışmanlık Ticaret A.Ş., firmalara kurumsal sürdürülebilirlik, çevresel etki yönetimi ve veri temelli karar destek çözümleri sunan, güçlü bir AR-GE ve uygulama odağına sahip bir danışmanlık şirketidir.',
+    metin: 'CANSET; sürdürülebilirliği yalnızca bir raporlama faaliyeti olarak değil, strateji, operasyon, teknoloji ve yönetişim süreçlerine entegre edilmesi gereken çok boyutlu bir dönüşüm alanı olarak ele alır. Bu yaklaşım doğrultusunda şirketimiz, hem uluslararası standartlara uyum (ISO 14064-1, ISO 14067, ISO 14040-44 vb.) hem de kuruma özgü, uygulanabilir çözümler üretmeye odaklanmaktadır.',
+    neUst: 'Ne yapıyoruz?', neBaslik: 'CANSET’in hizmet portföyü dört ana eksende şekillenmektedir',
+    farkUst: 'Neyi farklı yapıyoruz?',
+    liderUst: 'Kurucu ve bilimsel liderlik', liderAd: 'Prof. Dr. Fehmi Görkem Üçtuğ',
+    lider: [
+      'CANSET’in kurucu ortaklarından ve Yönetim Kurulu Başkanı olan Prof. Dr. Fehmi Görkem Üçtuğ, sürdürülebilirlik, yaşam döngüsü değerlendirmesi ve karbon yönetimi alanlarında akademik ve uygulamalı çalışmalarıyla tanınan bir uzmandır.',
+      'ODTÜ Kimya Mühendisliği mezunu olan Prof. Dr. Üçtuğ, doktora çalışmalarını Avrupa Birliği Marie Curie Bursu ile İngiltere’de Manchester Üniversitesi’nde tamamlamış; burada sürdürülebilir endüstriyel sistemler ve yaşam döngüsü analizi üzerine çalışmıştır.',
+      '2024 yılında Profesör unvanını alan Üçtuğ, üniversite-sanayi iş birlikleri ve uluslararası projeler yoluyla edindiği birikimi CANSET çatısı altında kurumsal ve profesyonel hizmetlere dönüştürmektedir.',
+    ],
+    refUst: 'Referanslar', refBaslik: 'Güvenilir Referanslar, Çok Disiplinli Deneyim',
+    ref: [
+      'CANSET; kamu kurumlarından sanayi kuruluşlarına, AR-GE merkezlerinden uluslararası platformlara kadar geniş bir yelpazede çözüm ortağı olarak konumlanmıştır.',
+      'Kurumsal sürdürülebilirlik danışmanlığı, karbon ayak izi çalışmaları, yaşam döngüsü değerlendirmesi ve eğitim hizmetleri alanlarında çok sayıda kurumla aktif olarak çalışmaktadır.',
+    ],
+    refDugme: 'Referans listesi',
+    yaklasimUst: 'Yaklaşımımız', yaklasimBaslik: 'Bilimsel temelli, ölçülebilir, yönetilebilir',
+    yaklasim: [
+      'CANSET olarak hedefimiz; kurumların bugünkü ihtiyaçlarını karşılayan, aynı zamanda yarının regülasyonlarına, pazar beklentilerine ve rekabet koşullarına hazırlayan sürdürülebilirlik çözümleri sunmaktır.',
+      'Şirketimiz, sürdürülebilirliği bilimsel temelli, ölçülebilir ve yönetilebilir bir süreç olarak ele alır ve bu anlayışı tüm projelerine yansıtır.',
+    ],
+  },
+  eksenler: [
+    { ad: 'Kurumsal Sürdürülebilirlik ve ESG Danışmanlığı', metin: [
       'Şirketlerin sürdürülebilirlik yolculuklarını; strateji oluşturma, önceliklendirme, hedef belirleme ve uygulamaya geçiş aşamalarını kapsayacak şekilde destekliyoruz.',
-      'Bu kapsamda farklı sektörlerden kurumlarla uzun soluklu iş birlikleri yürütüyor; sürdürülebilirliği yönetilebilir ve ölçülebilir hale getiriyoruz.',
-    ],
-  },
-  {
-    ad: 'Karbon ve Çevresel Ayak İzi Çalışmaları',
-    metin: [
+      'Bu kapsamda farklı sektörlerden kurumlarla uzun soluklu iş birlikleri yürütüyor; sürdürülebilirliği yönetilebilir ve ölçülebilir hale getiriyoruz.' ] },
+    { ad: 'Karbon ve Çevresel Ayak İzi Çalışmaları', metin: [
       'Kurumsal ve ürün bazlı sera gazı emisyonlarının hesaplanması, raporlanması ve iyileştirme alanlarının belirlenmesi süreçlerinde uluslararası standartlara uygun danışmanlık sunuyoruz.',
-      'Özellikle ISO 14064-1 Kurumsal Sera Gazı Envanteri, ISO 14067 Ürün Karbon Ayak İzi ve Yaşam Döngüsü Değerlendirmesi (LCA) çalışmalarında geniş bir referans ağına sahibiz.',
-    ],
-  },
-  {
-    ad: 'Yaşam Döngüsü Değerlendirmesi ve Ürün Odaklı Analizler',
-    metin: [
+      'Özellikle ISO 14064-1 Kurumsal Sera Gazı Envanteri, ISO 14067 Ürün Karbon Ayak İzi ve Yaşam Döngüsü Değerlendirmesi (LCA) çalışmalarında geniş bir referans ağına sahibiz.' ] },
+    { ad: 'Yaşam Döngüsü Değerlendirmesi ve Ürün Odaklı Analizler', metin: [
       'Enerji, gıda, kimya, kozmetik ve sanayi sektörleri başta olmak üzere farklı ürün grupları için bilimsel temelli yaşam döngüsü analizleri gerçekleştiriyoruz.',
-      'Bu çalışmalar sayesinde firmaların ürün portföylerini çevresel etkiler açısından karşılaştırmalarına, iyileştirme fırsatlarını belirlemelerine ve pazara yönelik güçlü argümanlar geliştirmelerine destek oluyoruz.',
-    ],
-  },
-  {
-    ad: 'Eğitim, Kapasite Geliştirme ve Dijital Çözümler',
-    metin: [
+      'Bu çalışmalar sayesinde firmaların ürün portföylerini çevresel etkiler açısından karşılaştırmalarına, iyileştirme fırsatlarını belirlemelerine ve pazara yönelik güçlü argümanlar geliştirmelerine destek oluyoruz.' ] },
+    { ad: 'Eğitim, Kapasite Geliştirme ve Dijital Çözümler', metin: [
       'Kurumsal sürdürülebilirlik, karbon yönetimi ve yaşam döngüsü yaklaşımı konularında eğitim ve farkındalık programları düzenliyor; kurum içi yetkinliklerin gelişmesini hedefliyoruz.',
-      'Ayrıca, sürdürülebilirlik süreçlerini destekleyen yazılım ve dijital araçların geliştirilmesi alanında da aktif olarak çalışıyoruz.',
+      'Ayrıca, sürdürülebilirlik süreçlerini destekleyen yazılım ve dijital araçların geliştirilmesi alanında da aktif olarak çalışıyoruz.' ] },
+  ],
+  farklar: [
+    'Akademik derinliği sahaya ve uygulamaya taşıyoruz.',
+    '“Herkese uyan tek çözüm” yerine, kuruma özgü yol haritaları geliştiriyoruz.',
+    'Rapor üretmenin ötesine geçerek, aksiyona dönüşebilir çıktılar sunuyoruz.',
+    'Sürdürülebilirliği maliyet değil, rekabet ve verimlilik unsuru olarak ele alıyoruz.',
+  ],
+  hizmetSayfa: {
+    baslik: 'Hizmetler', h1: 'Ölçümden yol haritasına, uçtan uca destek',
+    aciklama: 'Yaşam döngüsü değerlendirmesi (LCA), ürün ve kurumsal karbon ayak izi, EPD, su ayak izi, CDP, ESG ve sürdürülebilirlik raporlaması hizmetleri.',
+    giris: 'Çevresel etkilerinizi uluslararası standartlara uygun biçimde hesaplıyor, raporluyor ve azaltılmasına yönelik size özel çözüm önerileri sunuyoruz.',
+  },
+  hizmetler: [
+    { ad: 'Yaşam Döngüsü Değerlendirmesi', alt: 'Life Cycle Assessment - LCA', etiket: 'ISO 14040 / 14044',
+      metin: 'LCA, bir ürün veya hizmete ait yaşam döngüsü boyunca kullanılan her türlü girdi (ham madde, enerji) ve oluşan her türlü çıktıyı (ürün, yan ürün, atık) göz önüne alarak, ISO 14040 ve ISO 14044 standartlarına göre gerçekleştiren bir çevresel etki hesaplama yöntemidir. Bugüne kadar başta enerji ve gıda olmak üzere birçok sektöre yönelik LCA çalışmaları gerçekleştiren ekibimiz, alanının en iyisi yazılımlar vasıtasıyla size LCA konusunda destek vermeye hazırdır.' },
+    { ad: 'Ürün Karbon Ayak İzi',
+      metin: 'Özellikle Avrupa Birliği Yeşil Mutabakatının 2023’de resmen ve 2026’da fiilen hayatımıza girecek olmasıyla çok önem kazanan karbon ayak izi, bir ürünün üretimi esnasında gerçekleşen sera gazı salımlarının tespiti için kullanılan bir parametredir. Karbon ayak izi konusunda geniş bir tecrübeye sahip ekibimiz size dilerseniz kapsam 1, dilerseniz kapsam 2, dilerseniz de kapsam 3 seviyesinde ürün karbon ayak izi hesaplama hizmetini uluslararası standartlara uygun yazılımlar kullanarak sunmaya hazırdır.' },
+    { ad: 'Kurumsal Karbon Ayak İzi',
+      metin: 'Firmamız sadece ürünlerinize yönelik değil, kurumunuzun lojistik ve idari faaliyetlerini de içerecek şekilde bütünleşik kurumsal karbon ayak izi raporlaması da yapmaktadır. Karbon ayak izi konusunda geniş bir tecrübeye sahip ekibimiz size dilerseniz kapsam 1, dilerseniz kapsam 2, dilerseniz de kapsam 3 seviyesinde kurumsal karbon ayak izi hesaplama hizmetini uluslararası standartlara uygun yazılımlar kullanarak sunmaya hazırdır.' },
+    { ad: 'Çevresel Ürün Beyanı', alt: 'Environmental Product Declaration - EPD', etiket: 'ISO 14025',
+      metin: 'İngilizcesiyle “Environmental Product Declaration”, ya da kısaca EPD, ürünlerin yaşam döngüleri boyunca ortaya çıkan çevresel etkilerin, şeffaf ve karşılaştırılabilir bir biçimde paylaşılmasını sağlayan, bağımsız otoriteler tarafından doğrulanmış ve tescil edilmiş bir belgedir. Firmamız, operasyonlarınızı yerinde inceleyerek ISO 14025 standartına göre hazırlanması gereken EPD raporunu, alanındaki en kapsamlı yaşam döngüsü değerlendirmesi yazılımlarını kullanarak hazırlar ve doğrulatılması için ilgili firmalara iletir.' },
+    { ad: 'Ürün Su Ayak İzi',
+      metin: 'Su ayak izi, bir ürünün üretimi esnasında gerçekleşen toplam su tüketimini tespitinde kullanılan çok önemli bir çevresel sürdürülebilirlik parametresidir. Firmamız sadece ürünlerinize veya hizmetlerinize dair su ayak izini hesaplamakla kalmaz, aynı zamanda bu su ayak izinin yeşil-mavi-gri su dağılımını da sizlere raporlayarak hangi noktalarda ne tür önleyici ve iyileştirici eylemler almanız gerektiği konusunda da size fikir verir.' },
+    { ad: 'Karbon Saydamlık Projesi', alt: 'Carbon Disclosure Project - CDP',
+      metin: 'Uluslararası adıyla “Carbon Disclosure Project” ya da kısaca CDP olarak da bilinen bu proje, kurumların sera gazı salımları hakkında şeffaf ve kamuoyuna açık bilgi toplamak ve bu bilgilerin sonuçlarını paylaşmak için kurulan uluslararası bir organizasyondur. Firmamız da kurumunuza bu organizasyonun kuralları dahilinde sera gazı salımlarınızı raporlama ve böylece hem kurumsal farkındalığınızı ön plana çıkarmak, hem de sektörünüzdeki diğer firmalara örnek olmak yolunda destek vermeye hazırdır.' },
+    { ad: 'Yaşam Döngüsü Değerlendirmesi Eğitimi',
+      metin: 'Firmamız isterseniz çevrimiçi isterseniz de yüzyüze olarak kurumunuz personeline yaşam döngüsü değerlendirmesi, başta karbon ve su ayak izi olmak üzere çevresel sürdürülebilirlik parametrelerinin ölçümü, Yeşil Mutabakat ve karbon ayak izi mevzuatı gibi konularda eğitim vermeye hazırdır.' },
+    { ad: 'Ürün Çevresel Ayak İzi',
+      metin: 'Eğer ürünlerinizin veya hizmetlerinizin ayrıntılı bir çevresel etki analizi gerçekleştirmek istiyorsanız, firmamız alanının en iyisi yazılımlar kullanarak size atmosfere, toprağa ve suya yönelik çevresel etkilerin ister ürün, ister de kurum bazında hesaplanması yönünde destek vermeye hazırdır.' },
+    { ad: 'Sürdürülebilirlik Endeksi Hizmeti', etiket: 'ESG',
+      metin: 'Kurumsal sürdürülebilirlik üç temel unsur üzerine inşa edilmiştir: Çevresel (environmental), toplumsal (social) ve de yönetimsel (governance), ya da kısaca ESG. ESG kavramı, kurumların finansal performanslarının yanı sıra çevresel, sosyal ve yönetimsel performanslarını da raporlayarak şeffaf ve kapsamlı bir şekilde değerlendirmelerini sağlar. Türkiye’de Borsa İstanbul Sürdürülebilirlik Endeksi (BIST Sustainability - XUSRD) tarafından gerçekleştirilen ESG denetlemesine yönelik olarak kurumlarınızın bu alandaki belirleyici endeks olan Refinitiv ESG değerlendirmesi sisteminden yeterli puanı alabilmesi ve eksik olan yönlerinizi iyileştirmeye yönelik öneriler geliştirilmesi yönünde firmamız sizlere hizmet vermeye hazırdır.' },
+    { ad: 'Süreç Geliştirme Projeleri',
+      metin: 'Firmamızı benzerlerinden ayıran en temel unsurlardan birisi sadece çevresel sürdürülebilirlik parametrelerini tespit edip raporlama hizmeti sunmakla yetinmemesi, aynı zamanda bu çevresel etkilerin azaltılmasına yönelik faaliyetleri ekonomik ve çevresel boyutlarıyla inceleyerek size bir yol haritası hazırlamasıdır. Firmamız arzu ettiğiniz takdirde kurumunuzun faaliyetlerini yerinde inceleyerek size özel çözüm önerileri sunmaya hazırdır.' },
+    { ad: 'Kurumsal Sürdürülebilirlik Raporu Hazırlanması',
+      metin: 'Kurumsal sürdürülebilirlik raporları, bir şirketin sürdürülebilirliğin üç temel unsuru olan ekonomik, sosyal ve çevresel sürdürülebilirlik konularındaki performansını şeffaf bir biçimde kamuoyu ve şirket paydaşları ile paylaşmak amacıyla hazırlanır. Şirketler, bu raporlama çalışmasında sürdürülebilirlikle ilgili sorunları, bu konudaki riskleri ve fırsatları, güçlü ve zayıf yanlarını, kendisinin ve paydaşlarının potansiyellerini ele alır. Sürdürülebilirlik raporlarının içerikleri firmanın faaliyet gösterdiği sektör, ürün nitelikleri, şirket büyüklüğü gibi birçok faktör göz önüne alınarak hazırlanmaktadır. CANSET A.Ş. olarak müşterilerimize Türkçe ve İngilizce kurumsal sürdürülebilirlik raporu hazırlanması hizmeti sunmaktayız.' },
+  ],
+  projeSayfa: {
+    baslik: 'Projeler',
+    aciklama: 'Karbon ayak izi, yaşam döngüsü değerlendirmesi ve çevresel sürdürülebilirlik projeleri.',
+    giris: 'Bu sayfada firmamız yönetim kurulu başkanı Prof. Dr. Fehmi Görkem Üçtuğ yürütücülüğünde veya danışmanlığında gerçekleştirilmiş karbon ayak izi, yaşam döngüsü değerlendirmesi ve çevresel sürdürülebilirlik projeleri bugünden geçmişe doğru kronolojik olarak sunulmaktadır.',
+  },
+  projeler: [
+    'SOCAR A.Ş. İzmir Rafinerisinde Üretilen ACN Ürününün Yaşam Döngüsü Değerlendirmesi',
+    'Türkiye’de Salatalık Turşusu ve Közlenmiş Kapya Biber Üretiminin Yaşam Döngüsü Değerlendirmesi',
+    'Türkiye’de Nükleer Enerji Kullanımının Avrupa Birliği Yeşil Mutabakatı Kapsamında Demir-Çelik Sektörünün Karbon Ayak İzine Olan Etkisi',
+    'Bitcoin Üretimiyle Altın Üretiminin Karbon Ayak İzlerinin Yaşam Döngüsü Değerlendirmesi Yöntemiyle Karşılaştırılması',
+    'Kredi Kayıt Bürosu (KKB) Firmasına Ait Tier 4 Veri Merkezinin Karbon ve Su Ayak İzinin Hesaplanması',
+    'Kahve Çekirdeği Atığından Biyohidrojen Üretiminin Karbon Ayak İzinin Hesaplanması',
+    'Türkiye’de Faaliyet Gösteren Akış Tipi Bir Hidroelektrik Santralin Karbon Ayak İzinin Hesaplanması',
+    'Türk Mutfağı Özelinde Normal, Vejetaryen ve Vegan Beslenmenin Karbon Ayak İzlerinin Karşılaştırılması',
+    'TAT Gıda A.Ş. Tarafından Üretilen Domates Salçasının Karbon Ayak İzinin Hesaplanması',
+    'Glutenli ve Glutensiz Makarnanın Karbon Ayak İzlerinin Karşılaştırılması',
+    'Muz Ağacı Atıklarından Biyogaz Üretiminin Yaşam Döngüsü Değerlendirmesi',
+    'Zeytinyağı Üretimi Sonucu Açığa Çıkan Atıkların Değerlendirilmesine Dair Farklı Yöntemlerin Karşılaştırmalı Yaşam Döngüsü Değerlendirmesi',
+    'Farklı Süt Ürünlerinin Karşılaştırmalı Yaşam Döngüsü Değerlendirmesi',
+    'Türk Yoğurdunun Yaşam Döngüsü Değerlendirmesi',
+    'Türkiye’de Kullanılan Solar Termal Su Isıtma Sistemlerinin Yaşam Döngüsü Değerlendirmesi',
+    'Türkiye’de Kullanılan Fotovoltaik Panel-Lityum İyon Pil Hibrit Enerji Üretim ve Depolama Sistemlerinin Yaşam Döngüsü Değerlendirmesi',
+    'Türkiye’de Kullanılan Elektrik Enerjisi Kaynaklarının Ekonomik, Çevresel ve Sosyal Açılardan Yaşam Döngüsü Değerlendirmesi ve Çok Kriterli Karar Verme Yöntemiyle Kıyaslanması',
+    'Mikroalglerden Biyodizel Üretiminin Karbon Ayak İzinin Hesaplanması',
+    '“Türkiye Enerjisini Topluyor”',
+    '“Enerjimiz Çocuklar İçin”',
+  ],
+  basinSayfa: { baslik: 'Basında Biz', ust: 'Hakkımızda', aciklama: 'CANSET ve Prof. Dr. Fehmi Görkem Üçtuğ ile ilgili basında çıkan haberler.' },
+  basin: [
+    'İş dünyasına ‘yeşil’ destek',
+    'Bitcoin’in karbon ayak izi altından fazla',
+    'Sürdürülebilir Sohbetler’de, Doç. Dr. Görkem Üçtuğ',
+    '‘Türkiye Enerjisini Topluyor’ Projesi',
+    'Zorlu Enerji Grubu, “Zorlu ile Güneş Enerjisi” kitabını yayınladı',
+    'Türkiye için en uygun enerji kaynağı araştırmasından ‘hidroelektrik’ çıktı',
+  ],
+  refSayfa: {
+    baslik: 'Referanslar', h1: 'Birlikte çalıştığımız kurumlar',
+    aciklama: 'CANSET çözüm ortakları ve danışmanlık referansları.',
+    giris: 'Kurumsal sürdürülebilirlik danışmanlığı, karbon ayak izi çalışmaları, yaşam döngüsü değerlendirmesi ve eğitim hizmetleri alanlarında çok sayıda kurumla aktif olarak çalışmaktayız.',
+    gruplar: null, // TR başlıklar referanslar.json içinde
+  },
+  iletisim: {
+    baslik: 'İletişim', h1: 'Bize Ulaşın',
+    aciklama: 'CANSET ile iletişime geçin: e-posta, telefon ve adres bilgileri.',
+    adres: 'Adres', eposta: 'E-posta', tel: 'Tel',
+    ad: 'Adınız', soyad: 'Soyadınız', email: 'Email', mesaj: 'Mesajınız', gonder: 'Gönder',
+    not: 'Gönder’e bastığınızda mesajınız e-posta uygulamanızda hazırlanır.',
+    konuMetin: (k) => `${k} hakkında bilgi almak istiyorum.`,
+    varsayilanKonu: 'Web sitesi iletişim formu',
+  },
+};
+
+const en = {
+  sirketAd: 'CANSET Software Environment Energy Consulting Services Trade Inc.',
+  menu: [
+    { href: '/biz', ad: 'About Us' },
+    { href: '/hizmetler', ad: 'Services' },
+    { href: '/projeler', ad: 'Projects' },
+    { href: '/referanslar', ad: 'References' },
+    { href: '/basında-biz', ad: 'Press' },
+  ],
+  ui: {
+    siteBaslik: 'CANSET | Sustainability Consulting',
+    aciklama: 'Corporate sustainability consulting, carbon footprint, life cycle assessment and environmental impact reporting.',
+    atla: 'Skip to content', anaSayfa: 'CANSET home', anaMenu: 'Main menu', menu: 'Menu',
+    iletisim: 'Contact', site: 'Site', telif: 'All rights reserved.',
+    digerDil: 'Türkçe', digerDilEtiket: 'Türkçeye geç',
+    bilgiAl: 'Get Info', bilgiAlEtiket: (h) => `Get information about ${h}`,
+    kaynak: 'Source', kaynakEtiket: (p) => `${p} – open source (new tab)`,
+    habereGit: 'Read the story', yeniSekme: 'new tab',
+  },
+  home: {
+    ustYazi: 'Sustainability consulting · R&D',
+    h1: ['We make sustainability ', 'measurable', ' and manageable.'],
+    giris: 'We are an R&D company that provides sustainability consultancy services, environmental impact measurement/reporting, and process improvement suggestions to corporations.',
+    hizmetler: 'Services', ulasin: 'Contact Us',
+    sayilarEtiket: 'CANSET in numbers',
+    sayilar: ['service lines', 'published projects', 'references and solution partners'],
+    neUst: 'What we do', neBaslik: 'Our service portfolio is structured around four core pillars', tumHizmetler: 'Explore all services',
+    farkUst: 'What sets us apart', farkBaslik: 'Beyond reporting: action-oriented outputs',
+    farkMetin: 'At CANSET, sustainability is not approached merely as a reporting exercise. Instead, it is treated as a multi-dimensional transformation process that must be embedded into corporate strategy, operations, technology, and governance.',
+    hakkimizda: 'About Us',
+    refUst: 'References', refBaslik: 'Trusted references, multidisciplinary experience',
+    refMetin: 'CANSET acts as a solution partner for a broad range of organizations, including industrial companies, public institutions, R&D centers, and international platforms.',
+    tumRef: 'All references',
+    ctaBaslik: 'Let’s talk about your project',
+    ctaMetin: 'Contact us for solutions that address today’s operational needs while preparing your organization for future regulations.',
+  },
+  about: {
+    baslik: 'About Us', h1: 'Who are we?',
+    aciklama: 'CANSET is an R&D-oriented consulting company providing corporate sustainability, environmental impact management, and data-driven decision support solutions.',
+    giris: 'CANSET Software, Energy & Environmental Consulting Inc. is an R&D-oriented consulting company providing corporate sustainability, environmental impact management, and data-driven decision support solutions to organizations across a wide range of sectors.',
+    metin: 'At CANSET, sustainability is not approached merely as a reporting exercise. Instead, it is treated as a multi-dimensional transformation process that must be embedded into corporate strategy, operations, technology, and governance. In this context, we deliver solutions that ensure both compliance with international standards (ISO 14064-1, ISO 14067, ISO 14040-44, etc.) and company-specific, actionable outcomes.',
+    neUst: 'What we do', neBaslik: 'CANSET’s service portfolio is structured around four core pillars',
+    farkUst: 'What sets us apart',
+    liderUst: 'Founder & scientific leadership', liderAd: 'Prof. Dr. Fehmi Görkem Üçtuğ',
+    lider: [
+      'One of CANSET’s founding partners and its Chairman of the Board, Prof. Dr. Fehmi Görkem Üçtuğ, is a recognized expert in sustainability, life cycle assessment, and carbon management, with a strong academic and applied background.',
+      'Prof. Dr. Üçtuğ graduated as the top student from the Department of Chemical Engineering at Middle East Technical University (METU) and completed his PhD at the University of Manchester under a European Union Marie Curie Fellowship, focusing on sustainable industrial systems and life cycle assessment.',
+      'He was promoted to Full Professor in 2024 and brings his extensive experience in university–industry collaboration and international research directly into CANSET’s professional consulting activities.',
+    ],
+    refUst: 'References', refBaslik: 'Trusted References, Multidisciplinary Experience',
+    ref: [
+      'CANSET acts as a solution partner for a broad range of organizations, including industrial companies, public institutions, R&D centers, and international platforms.',
+      'We have delivered services in corporate sustainability consulting, carbon footprint studies, life cycle assessment, and sustainability training for numerous organizations across different sectors.',
+    ],
+    refDugme: 'Reference list',
+    yaklasimUst: 'Our approach', yaklasimBaslik: 'Science-based, measurable, manageable',
+    yaklasim: [
+      'At CANSET, our objective is to provide sustainability solutions that address today’s operational needs while preparing organizations for future regulations, market expectations, and competitive pressures.',
+      'We approach sustainability as a science-based, measurable, and manageable process, and this philosophy underpins all of our projects.',
     ],
   },
-];
+  eksenler: [
+    { ad: 'Corporate Sustainability & ESG Consulting', metin: [
+      'We support organizations throughout their sustainability journeys, from strategy development and prioritization to target setting and implementation.',
+      'Our work focuses on making sustainability measurable, manageable, and decision-relevant, through long-term collaborations with clients from diverse sectors.' ] },
+    { ad: 'Carbon & Environmental Footprint Studies', metin: [
+      'We provide consulting services for the calculation, reporting, and improvement of corporate and product-level greenhouse gas emissions, in line with internationally recognized methodologies and standards.',
+      'CANSET has extensive experience in ISO 14064-1 Corporate GHG Inventories, ISO 14067 Product Carbon Footprints, and Life Cycle Assessment (LCA) studies.' ] },
+    { ad: 'Life Cycle Assessment & Product-Oriented Analysis', metin: [
+      'We conduct scientifically robust life cycle assessments for products across multiple sectors, including energy, food, chemicals, cosmetics, and manufacturing.',
+      'These analyses enable companies to compare product portfolios, identify environmental improvement opportunities, and develop credible sustainability-based market arguments.' ] },
+    { ad: 'Training, Capacity Building & Digital Solutions', metin: [
+      'CANSET delivers training and awareness programs on corporate sustainability, carbon management, and life cycle thinking, supporting the development of in-house competencies.',
+      'In parallel, we actively work on software-based and digital tools that support sustainability data management and decision-making processes.' ] },
+  ],
+  farklar: [
+    'We translate academic depth into practical, implementable solutions.',
+    'We develop tailor-made roadmaps instead of one-size-fits-all approaches.',
+    'We go beyond reporting by delivering action-oriented outputs.',
+    'We treat sustainability not as a cost, but as a lever for competitiveness and efficiency.',
+  ],
+  hizmetSayfa: {
+    baslik: 'Services', h1: 'End-to-end support, from measurement to roadmap',
+    aciklama: 'Life cycle assessment (LCA), product and corporate carbon footprint, EPD, water footprint, CDP, ESG and sustainability reporting services.',
+    giris: 'We calculate and report your environmental impacts in line with international standards and offer tailored solutions to reduce them.',
+  },
+  hizmetler: [
+    { ad: 'Life Cycle Assessment', alt: 'LCA', etiket: 'ISO 14040 / 14044',
+      metin: 'LCA is an environmental impact calculation method that takes into account all kinds of inputs (raw materials, energy) and all kinds of outputs (products, by-products, waste) used throughout the life cycle of a product or service, according to ISO 14040 and ISO 14044 standards. Our team, which has carried out LCA studies for many sectors, especially energy and food, is ready to support you on LCA through the best software in its field.' },
+    { ad: 'Product Carbon Footprint',
+      metin: 'The carbon footprint, which has become especially important with the European Union Green Deal coming into our lives officially in 2023, and will actually be in effect starting from 2026, is a parameter used to determine the greenhouse gas emissions during the production of a product. Our team, which has a wide experience in carbon footprint calculations, is ready to offer you the product carbon footprint calculation service at the level of scope 1, scope 2 or scope 3, using software that complies with international standards.' },
+    { ad: 'Corporate Carbon Footprint',
+      metin: 'Our company provides integrated corporate carbon footprint reporting, not only for your products, but also for your organization\'s logistics and administrative activities. Our team, which has a wide experience in carbon footprint calculations, is ready to offer you the corporate carbon footprint calculation service at the level of scope 1, scope 2 or scope 3, using software that complies with international standards.' },
+    { ad: 'Environmental Product Declaration', alt: 'EPD', etiket: 'ISO 14025',
+      metin: '“Environmental Product Declaration”, or EPD for short, is a document that has been verified and registered by independent authorities that enables the environmental impacts of products to be shared in a transparent and comparable way throughout their life cycle. Our company examines your operations on-site and prepares the EPD report, which should be prepared according to ISO 14025 standard, using the most comprehensive life cycle assessment software in its field and forwards it to the relevant companies for verification.' },
+    { ad: 'Product Water Footprint',
+      metin: 'Water footprint is a very important environmental sustainability parameter used to determine the total water consumption during the production of a product. Our company not only calculates the water footprint of your products or services, but also reports the green-blue-gray water distribution of this water footprint, giving you an idea of what preventive and remedial actions should be taken at which points.' },
+    { ad: 'Carbon Disclosure Project', alt: 'CDP',
+      metin: 'This project, also known as the "Carbon Disclosure Project" or CDP for short, is an international organization established to collect transparent and public information about the greenhouse gas emissions of institutions and to share the results of this information. Our company is also ready to support your organization in reporting your greenhouse gas emissions within the rules of this organization, thus both highlighting your corporate awareness and setting an example for other companies in your sector.' },
+    { ad: 'Life Cycle Assessment Training',
+      metin: 'Our company is ready to provide training on life cycle assessment, measurement of environmental sustainability parameters, especially carbon and water footprint, the Green Deal and carbon footprint legislation, whether online or face-to-face.' },
+    { ad: 'Product Environmental Footprint',
+      metin: 'If you want to perform a detailed environmental impact analysis of your products or services, our company is ready to support you in calculating the environmental impacts on the atmosphere, soil and water, whether on a product or institution basis, using the best software in the field.' },
+    { ad: 'Sustainability Index Service', etiket: 'ESG',
+      metin: 'Corporate sustainability is built on three key elements: environmental, social and governance, or ESG for short. The concept of ESG enables organizations to evaluate their environmental, social and governance performances in a transparent and comprehensive way as well as their financial performance. Our company is ready to serve you so that your institutions can get enough points from the Refinitiv ESG evaluation system, which is the determining index in this field, for the ESG audit carried out by the Borsa Istanbul Sustainability Index (BIST Sustainability - XUSRD) in Turkey and to develop suggestions for improving your deficiencies.' },
+    { ad: 'Process Development Projects',
+      metin: 'One of the most fundamental elements that distinguishes our company from its peers is that it not only determines environmental sustainability parameters and provides reporting services, but also prepares a roadmap for you by examining the activities aimed at reducing these environmental impacts with their economic and environmental dimensions. If you wish, our company is ready to examine the activities of your institution on site and offer you special solutions.' },
+    { ad: 'Corporate Sustainability Report Preparation',
+      metin: 'Corporate sustainability reports are prepared to transparently share a company\'s performance in the three pillars of sustainability - economic, social and environmental sustainability - with the public and company stakeholders. In this reporting exercise, companies address sustainability-related issues, risks and opportunities, strengths and weaknesses, and the potential of themselves and their stakeholders. The contents of sustainability reports are prepared by taking into account many factors such as the sector in which the company operates, product qualities, and company size. As CANSET Inc., we provide our clients with corporate sustainability report preparation services in Turkish and English.' },
+  ],
+  projeSayfa: {
+    baslik: 'Projects',
+    aciklama: 'Carbon footprint, life cycle assessment and environmental sustainability projects.',
+    giris: 'On this page, the carbon footprint, life cycle assessment, and environmental sustainability projects carried out under the direction or consultancy of our company\'s chairman of the board, Prof. Dr. Fehmi Görkem Üçtuğ, are presented chronologically from present to past.',
+  },
+  projeler: [
+    'Life Cycle Assessment of the ACN Product Produced at the SOCAR A.Ş. İzmir Refinery',
+    'Life Cycle Assessment of Pickled Cucumber and Roasted Capia Pepper Production in Turkey',
+    'The Effect of Nuclear Energy Use in Turkey on the Carbon Footprint of the Iron and Steel Industry in the Scope of the European Union Green Deal',
+    'Comparison of Carbon Footprints of Bitcoin Production and Gold Production with Life Cycle Assessment Method',
+    'Calculation of Carbon and Water Footprint of the Tier 4 Data Center of Kredi Kayıt Bürosu (KKB)',
+    'Calculating the Carbon Footprint of Biohydrogen Production from Coffee Bean Waste',
+    'Calculating the Carbon Footprint of a Run-of-River Hydroelectric Power Plant Operating in Turkey',
+    'Comparison of Carbon Footprints of Normal, Vegetarian and Vegan Nutrition in Turkish Cuisine',
+    'Calculation of the Carbon Footprint of Tomato Paste Produced by TAT Gıda A.Ş.',
+    'Comparison of Carbon Footprints of Gluten and Gluten-Free Pasta',
+    'Life Cycle Assessment of Biogas Production from Banana Tree Waste',
+    'Comparative Life Cycle Assessment of Different Methods of Valorising Wastes from Olive Oil Production',
+    'Comparative Life Cycle Assessment of Different Dairy Products',
+    'Life Cycle Assessment of Turkish Yogurt',
+    'Life Cycle Assessment of Solar Thermal Water Heating Systems Used in Turkey',
+    'Life Cycle Assessment of Photovoltaic Panel-Lithium-Ion Battery Hybrid Energy Generation and Storage Systems Used in Turkey',
+    'Comparison of Electrical Energy Resources Used in Turkey in Economic, Environmental and Social Perspectives with Life Cycle Assessment and Multi-Criteria Decision Making Method',
+    'Calculating the Carbon Footprint of Biodiesel Production from Microalgae',
+    '“Turkey Collects Its Energy”',
+    '“Our Energy is for Children”',
+  ],
+  basinSayfa: { baslik: 'Us in the Press', ust: 'About Us', aciklama: 'Press coverage of CANSET and Prof. Dr. Fehmi Görkem Üçtuğ (articles are in Turkish).' },
+  basin: [
+    '‘Green’ support to the business world',
+    'Bitcoin’s carbon footprint is more than gold',
+    'In Sustainable Conversations, Associate Professor Görkem Üçtuğ',
+    '‘Turkey Collects Its Energy’ Project',
+    'Zorlu Energy Group published the book “Solar Energy with Zorlu”',
+    '‘Hydroelectric’ comes out of research on the most suitable energy source for Turkey',
+  ],
+  refSayfa: {
+    baslik: 'References', h1: 'Organizations we work with',
+    aciklama: 'CANSET solution partners and consulting references.',
+    giris: 'We have delivered services in corporate sustainability consulting, carbon footprint studies, life cycle assessment, and sustainability training for numerous organizations across different sectors.',
+    gruplar: [
+      'Solution Partners',
+      'Corporate Sustainability Consulting Services',
+      'Consulting Services for ISO 14064-1 Corporate Greenhouse Gas Inventory Reporting',
+      'ISO 14067 Product Carbon Footprint Consulting Services',
+      'ISO 14040-44 Life Cycle Assessment Consulting Services',
+      'Sustainability Training Consulting Services',
+    ],
+  },
+  iletisim: {
+    baslik: 'Contact', h1: 'Contact Us',
+    aciklama: 'Get in touch with CANSET: e-mail, phone and address.',
+    adres: 'Address', eposta: 'E-mail', tel: 'Tel',
+    ad: 'Your name', soyad: 'Your surname', email: 'E-mail', mesaj: 'Your Message', gonder: 'Send',
+    not: 'When you press Send, your message is prepared in your e-mail application.',
+    konuMetin: (k) => `I would like to get information about ${k}.`,
+    varsayilanKonu: 'Website contact form',
+  },
+};
 
-export const farklar = [
-  'Akademik derinliği sahaya ve uygulamaya taşıyoruz.',
-  '“Herkese uyan tek çözüm” yerine, kuruma özgü yol haritaları geliştiriyoruz.',
-  'Rapor üretmenin ötesine geçerek, aksiyona dönüşebilir çıktılar sunuyoruz.',
-  'Sürdürülebilirliği maliyet değil, rekabet ve verimlilik unsuru olarak ele alıyoruz.',
-];
+for (const d of [tr, en]) {
+  d.projeler = d.projeler.map((ad, i) => ({ ad, url: projeUrl[i] }));
+  d.basin = d.basin.map((ad, i) => ({ ad, ...basinKaynak[i] }));
+}
+// ponytail: TR/EN listeleri indeksle eşleşir; biri uzarsa derleme burada dursun
+console.assert(tr.projeler.length === en.projeler.length && tr.hizmetler.length === en.hizmetler.length && tr.basin.length === en.basin.length, 'TR/EN içerik listeleri eşit uzunlukta değil');
 
-export const hizmetler = [
-  {
-    ad: 'Yaşam Döngüsü Değerlendirmesi',
-    alt: 'Life Cycle Assessment - LCA',
-    etiket: 'ISO 14040 / 14044',
-    metin: 'LCA, bir ürün veya hizmete ait yaşam döngüsü boyunca kullanılan her türlü girdi (ham madde, enerji) ve oluşan her türlü çıktıyı (ürün, yan ürün, atık) göz önüne alarak, ISO 14040 ve ISO 14044 standartlarına göre gerçekleştiren bir çevresel etki hesaplama yöntemidir. Bugüne kadar başta enerji ve gıda olmak üzere birçok sektöre yönelik LCA çalışmaları gerçekleştiren ekibimiz, alanının en iyisi yazılımlar vasıtasıyla size LCA konusunda destek vermeye hazırdır.',
-  },
-  {
-    ad: 'Ürün Karbon Ayak İzi',
-    metin: 'Özellikle Avrupa Birliği Yeşil Mutabakatının 2023’de resmen ve 2026’da fiilen hayatımıza girecek olmasıyla çok önem kazanan karbon ayak izi, bir ürünün üretimi esnasında gerçekleşen sera gazı salımlarının tespiti için kullanılan bir parametredir. Karbon ayak izi konusunda geniş bir tecrübeye sahip ekibimiz size dilerseniz kapsam 1, dilerseniz kapsam 2, dilerseniz de kapsam 3 seviyesinde ürün karbon ayak izi hesaplama hizmetini uluslararası standartlara uygun yazılımlar kullanarak sunmaya hazırdır.',
-  },
-  {
-    ad: 'Kurumsal Karbon Ayak İzi',
-    metin: 'Firmamız sadece ürünlerinize yönelik değil, kurumunuzun lojistik ve idari faaliyetlerini de içerecek şekilde bütünleşik kurumsal karbon ayak izi raporlaması da yapmaktadır. Karbon ayak izi konusunda geniş bir tecrübeye sahip ekibimiz size dilerseniz kapsam 1, dilerseniz kapsam 2, dilerseniz de kapsam 3 seviyesinde kurumsal karbon ayak izi hesaplama hizmetini uluslararası standartlara uygun yazılımlar kullanarak sunmaya hazırdır.',
-  },
-  {
-    ad: 'Çevresel Ürün Beyanı',
-    alt: 'Environmental Product Declaration - EPD',
-    etiket: 'ISO 14025',
-    metin: 'İngilizcesiyle “Environmental Product Declaration”, ya da kısaca EPD, ürünlerin yaşam döngüleri boyunca ortaya çıkan çevresel etkilerin, şeffaf ve karşılaştırılabilir bir biçimde paylaşılmasını sağlayan, bağımsız otoriteler tarafından doğrulanmış ve tescil edilmiş bir belgedir. Firmamız, operasyonlarınızı yerinde inceleyerek ISO 14025 standartına göre hazırlanması gereken EPD raporunu, alanındaki en kapsamlı yaşam döngüsü değerlendirmesi yazılımlarını kullanarak hazırlar ve doğrulatılması için ilgili firmalara iletir.',
-  },
-  {
-    ad: 'Ürün Su Ayak İzi',
-    metin: 'Su ayak izi, bir ürünün üretimi esnasında gerçekleşen toplam su tüketimini tespitinde kullanılan çok önemli bir çevresel sürdürülebilirlik parametresidir. Firmamız sadece ürünlerinize veya hizmetlerinize dair su ayak izini hesaplamakla kalmaz, aynı zamanda bu su ayak izinin yeşil-mavi-gri su dağılımını da sizlere raporlayarak hangi noktalarda ne tür önleyici ve iyileştirici eylemler almanız gerektiği konusunda da size fikir verir.',
-  },
-  {
-    ad: 'Karbon Saydamlık Projesi',
-    alt: 'Carbon Disclosure Project - CDP',
-    metin: 'Uluslararası adıyla “Carbon Disclosure Project” ya da kısaca CDP olarak da bilinen bu proje, kurumların sera gazı salımları hakkında şeffaf ve kamuoyuna açık bilgi toplamak ve bu bilgilerin sonuçlarını paylaşmak için kurulan uluslararası bir organizasyondur. Firmamız da kurumunuza bu organizasyonun kuralları dahilinde sera gazı salımlarınızı raporlama ve böylece hem kurumsal farkındalığınızı ön plana çıkarmak, hem de sektörünüzdeki diğer firmalara örnek olmak yolunda destek vermeye hazırdır.',
-  },
-  {
-    ad: 'Yaşam Döngüsü Değerlendirmesi Eğitimi',
-    metin: 'Firmamız isterseniz çevrimiçi isterseniz de yüzyüze olarak kurumunuz personeline yaşam döngüsü değerlendirmesi, başta karbon ve su ayak izi olmak üzere çevresel sürdürülebilirlik parametrelerinin ölçümü, Yeşil Mutabakat ve karbon ayak izi mevzuatı gibi konularda eğitim vermeye hazırdır.',
-  },
-  {
-    ad: 'Ürün Çevresel Ayak İzi',
-    metin: 'Eğer ürünlerinizin veya hizmetlerinizin ayrıntılı bir çevresel etki analizi gerçekleştirmek istiyorsanız, firmamız alanının en iyisi yazılımlar kullanarak size atmosfere, toprağa ve suya yönelik çevresel etkilerin ister ürün, ister de kurum bazında hesaplanması yönünde destek vermeye hazırdır.',
-  },
-  {
-    ad: 'Sürdürülebilirlik Endeksi Hizmeti',
-    etiket: 'ESG',
-    metin: 'Kurumsal sürdürülebilirlik üç temel unsur üzerine inşa edilmiştir: Çevresel (environmental), toplumsal (social) ve de yönetimsel (governance), ya da kısaca ESG. ESG kavramı, kurumların finansal performanslarının yanı sıra çevresel, sosyal ve yönetimsel performanslarını da raporlayarak şeffaf ve kapsamlı bir şekilde değerlendirmelerini sağlar. Türkiye’de Borsa İstanbul Sürdürülebilirlik Endeksi (BIST Sustainability - XUSRD) tarafından gerçekleştirilen ESG denetlemesine yönelik olarak kurumlarınızın bu alandaki belirleyici endeks olan Refinitiv ESG değerlendirmesi sisteminden yeterli puanı alabilmesi ve eksik olan yönlerinizi iyileştirmeye yönelik öneriler geliştirilmesi yönünde firmamız sizlere hizmet vermeye hazırdır.',
-  },
-  {
-    ad: 'Süreç Geliştirme Projeleri',
-    metin: 'Firmamızı benzerlerinden ayıran en temel unsurlardan birisi sadece çevresel sürdürülebilirlik parametrelerini tespit edip raporlama hizmeti sunmakla yetinmemesi, aynı zamanda bu çevresel etkilerin azaltılmasına yönelik faaliyetleri ekonomik ve çevresel boyutlarıyla inceleyerek size bir yol haritası hazırlamasıdır. Firmamız arzu ettiğiniz takdirde kurumunuzun faaliyetlerini yerinde inceleyerek size özel çözüm önerileri sunmaya hazırdır.',
-  },
-  {
-    ad: 'Kurumsal Sürdürülebilirlik Raporu Hazırlanması',
-    metin: 'Kurumsal sürdürülebilirlik raporları, bir şirketin sürdürülebilirliğin üç temel unsuru olan ekonomik, sosyal ve çevresel sürdürülebilirlik konularındaki performansını şeffaf bir biçimde kamuoyu ve şirket paydaşları ile paylaşmak amacıyla hazırlanır. Şirketler, bu raporlama çalışmasında sürdürülebilirlikle ilgili sorunları, bu konudaki riskleri ve fırsatları, güçlü ve zayıf yanlarını, kendisinin ve paydaşlarının potansiyellerini ele alır. Sürdürülebilirlik raporlarının içerikleri firmanın faaliyet gösterdiği sektör, ürün nitelikleri, şirket büyüklüğü gibi birçok faktör göz önüne alınarak hazırlanmaktadır. CANSET A.Ş. olarak müşterilerimize Türkçe ve İngilizce kurumsal sürdürülebilirlik raporu hazırlanması hizmeti sunmaktayız.',
-  },
-];
-
-export const projeler = [
-  { ad: 'SOCAR A.Ş. İzmir Rafinerisinde Üretilen ACN Ürününün Yaşam Döngüsü Değerlendirmesi' },
-  { ad: 'Türkiye’de Salatalık Turşusu ve Közlenmiş Kapya Biber Üretiminin Yaşam Döngüsü Değerlendirmesi', url: 'https://link.springer.com/article/10.1007/s13762-021-03740-1' },
-  { ad: 'Türkiye’de Nükleer Enerji Kullanımının Avrupa Birliği Yeşil Mutabakatı Kapsamında Demir-Çelik Sektörünün Karbon Ayak İzine Olan Etkisi' },
-  { ad: 'Bitcoin Üretimiyle Altın Üretiminin Karbon Ayak İzlerinin Yaşam Döngüsü Değerlendirmesi Yöntemiyle Karşılaştırılması' },
-  { ad: 'Kredi Kayıt Bürosu (KKB) Firmasına Ait Tier 4 Veri Merkezinin Karbon ve Su Ayak İzinin Hesaplanması' },
-  { ad: 'Kahve Çekirdeği Atığından Biyohidrojen Üretiminin Karbon Ayak İzinin Hesaplanması' },
-  { ad: 'Türkiye’de Faaliyet Gösteren Akış Tipi Bir Hidroelektrik Santralin Karbon Ayak İzinin Hesaplanması', url: 'https://aiche.onlinelibrary.wiley.com/doi/epdf/10.1002/ep.13716' },
-  { ad: 'Türk Mutfağı Özelinde Normal, Vejetaryen ve Vegan Beslenmenin Karbon Ayak İzlerinin Karşılaştırılması', url: 'https://www.sciencedirect.com/science/article/abs/pii/S2352550920314263' },
-  { ad: 'TAT Gıda A.Ş. Tarafından Üretilen Domates Salçasının Karbon Ayak İzinin Hesaplanması' },
-  { ad: 'Glutenli ve Glutensiz Makarnanın Karbon Ayak İzlerinin Karşılaştırılması', url: 'https://ifst.onlinelibrary.wiley.com/doi/10.1111/jfpp.14701' },
-  { ad: 'Muz Ağacı Atıklarından Biyogaz Üretiminin Yaşam Döngüsü Değerlendirmesi', url: 'https://www.sciencedirect.com/science/article/abs/pii/S2352550919304609' },
-  { ad: 'Zeytinyağı Üretimi Sonucu Açığa Çıkan Atıkların Değerlendirilmesine Dair Farklı Yöntemlerin Karşılaştırmalı Yaşam Döngüsü Değerlendirmesi', url: 'https://www.sciencedirect.com/science/article/abs/pii/S2352550919304518' },
-  { ad: 'Farklı Süt Ürünlerinin Karşılaştırmalı Yaşam Döngüsü Değerlendirmesi', url: 'https://link.springer.com/article/10.1007/s12393-019-9187-4' },
-  { ad: 'Türk Yoğurdunun Yaşam Döngüsü Değerlendirmesi', url: 'https://www.sciencedirect.com/science/article/abs/pii/S0959652619301441' },
-  { ad: 'Türkiye’de Kullanılan Solar Termal Su Isıtma Sistemlerinin Yaşam Döngüsü Değerlendirmesi', url: 'https://www.sciencedirect.com/science/article/abs/pii/S0048969717334769' },
-  { ad: 'Türkiye’de Kullanılan Fotovoltaik Panel-Lityum İyon Pil Hibrit Enerji Üretim ve Depolama Sistemlerinin Yaşam Döngüsü Değerlendirmesi', url: 'https://www.sciencedirect.com/science/article/abs/pii/S0048969718323660' },
-  { ad: 'Türkiye’de Kullanılan Elektrik Enerjisi Kaynaklarının Ekonomik, Çevresel ve Sosyal Açılardan Yaşam Döngüsü Değerlendirmesi ve Çok Kriterli Karar Verme Yöntemiyle Kıyaslanması', url: 'https://www.aa.com.tr/tr/turkiye/turkiye-icin-en-uygun-enerji-kaynagi-arastirmasindan-hidroelektrik-cikti/1689227' },
-  { ad: 'Mikroalglerden Biyodizel Üretiminin Karbon Ayak İzinin Hesaplanması' },
-  { ad: '“Türkiye Enerjisini Topluyor”', url: 'https://www.haberler.com/yerel/turkiye-enerjisini-topluyor-projesi-7116472-haberi/' },
-  { ad: '“Enerjimiz Çocuklar İçin”', url: 'https://uzmanpara.milliyet.com.tr/kap-haberi/basin-bulteni-zorlu-enerji-grubu--zorlu-ile-gunes-enerjisi-kitabini-yayinladi/889704/' },
-];
-
-export const basin = [
-  { ad: 'İş dünyasına ‘yeşil’ destek', kaynak: 'Bizim İzmir', url: 'https://www.bizimizmir.net/is-dunyasina-yesil-destek-51036' },
-  { ad: 'Bitcoin’in karbon ayak izi altından fazla', kaynak: 'TRT Haber', url: 'https://www.trthaber.com/haber/bilim-teknoloji/bitcoinin-karbon-ayak-izi-altindan-fazla-663872.html' },
-  { ad: 'Sürdürülebilir Sohbetler’de, Doç. Dr. Görkem Üçtuğ', kaynak: 'YouTube', url: 'https://www.youtube.com/watch?v=qVE3IzJU4gg' },
-  { ad: '‘Türkiye Enerjisini Topluyor’ Projesi', kaynak: 'Haberler.com', url: 'https://www.haberler.com/yerel/turkiye-enerjisini-topluyor-projesi-7116472-haberi/' },
-  { ad: 'Zorlu Enerji Grubu, “Zorlu ile Güneş Enerjisi” kitabını yayınladı', kaynak: 'Milliyet Uzmanpara', url: 'https://uzmanpara.milliyet.com.tr/kap-haberi/basin-bulteni-zorlu-enerji-grubu--zorlu-ile-gunes-enerjisi-kitabini-yayinladi/889704/' },
-  { ad: 'Türkiye için en uygun enerji kaynağı araştırmasından ‘hidroelektrik’ çıktı', kaynak: 'Anadolu Ajansı', url: 'https://www.aa.com.tr/tr/turkiye/turkiye-icin-en-uygun-enerji-kaynagi-arastirmasindan-hidroelektrik-cikti/1689227' },
-];
+export const icerik = { tr, en };

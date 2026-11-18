@@ -1,31 +1,38 @@
 ---
-import { sirket, menu } from '../data/site.js';
-const { title, description = 'Kurumsal sürdürülebilirlik danışmanlığı, karbon ayak izi, yaşam döngüsü değerlendirmesi ve çevresel etki raporlaması.' } = Astro.props;
-const yol = decodeURI(Astro.url.pathname).replace(/\/$/, '');
+import { sirket, icerik, yol, kok } from '../data/site.js';
+const { lang = 'tr', title, description } = Astro.props;
+const t = icerik[lang];
+const u = (p = '') => yol(lang, p);
+// kök ve /en önekinden arındırılmış sayfa yolu (ör. /hizmetler)
+const sayfa = decodeURI(Astro.url.pathname).slice(kok.length).replace(/^\/en(?=\/|$)/, '').replace(/\/$/, '');
+const diger = lang === 'en' ? 'tr' : 'en';
 ---
 <!doctype html>
-<html lang="tr">
+<html lang={lang}>
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>{title ? `${title} | CANSET` : 'CANSET | Sürdürülebilirlik Danışmanlığı'}</title>
-  <meta name="description" content={description} />
-  <link rel="icon" href="/logo.webp" />
+  <title>{title ? `${title} | CANSET` : t.ui.siteBaslik}</title>
+  <meta name="description" content={description ?? t.ui.aciklama} />
+  <link rel="alternate" hreflang="tr" href={new URL(yol('tr', sayfa), Astro.site)} />
+  <link rel="alternate" hreflang="en" href={new URL(yol('en', sayfa), Astro.site)} />
+  <link rel="icon" href={`${kok}/logo.webp`} />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <a class="atla" href="#icerik">İçeriğe geç</a>
+  <a class="atla" href="#icerik">{t.ui.atla}</a>
   <header class="ust">
     <div class="kap ust-ic">
-      <a href="/" class="logo" aria-label="CANSET ana sayfa"><img src="/logo.svg" alt="CANSET" width="137" height="60" /></a>
-      <nav aria-label="Ana menü">
+      <a href={u() || '/'} class="logo" aria-label={t.ui.anaSayfa}><img src={`${kok}/logo.svg`} alt="CANSET" width="137" height="60" /></a>
+      <nav aria-label={t.ui.anaMenu}>
         <details class="mobil">
-          <summary aria-label="Menü"><span></span></summary>
+          <summary aria-label={t.ui.menu}><span></span></summary>
           <ul>
-            {menu.map((m) => <li><a href={m.href} aria-current={yol === m.href ? 'page' : undefined}>{m.ad}</a></li>)}
-            <li><a class="dugme" href="/iletisim">İletişim</a></li>
+            {t.menu.map((m) => <li><a href={u(m.href)} aria-current={sayfa === m.href ? 'page' : undefined}>{m.ad}</a></li>)}
+            <li><a class="dil" href={yol(diger, sayfa) || '/'} lang={diger} hreflang={diger} aria-label={t.ui.digerDilEtiket}>{diger.toUpperCase()}</a></li>
+            <li><a class="dugme" href={u('/iletisim')}>{t.ui.iletisim}</a></li>
           </ul>
         </details>
       </nav>
@@ -38,23 +45,24 @@ const yol = decodeURI(Astro.url.pathname).replace(/\/$/, '');
     <div class="kap alt-ic">
       <div>
         <p class="alt-ad">CANSET</p>
-        <p>{sirket.ad}</p>
+        <p>{t.sirketAd}</p>
         <p>{sirket.adres}</p>
       </div>
       <div>
-        <p class="alt-baslik">İletişim</p>
+        <p class="alt-baslik">{t.ui.iletisim}</p>
         <p><a href={`mailto:${sirket.eposta}`}>{sirket.eposta}</a></p>
         <p><a href={`tel:${sirket.tel}`}>{sirket.telGorunen}</a></p>
       </div>
       <div>
-        <p class="alt-baslik">Site</p>
+        <p class="alt-baslik">{t.ui.site}</p>
         <ul>
-          {menu.map((m) => <li><a href={m.href}>{m.ad}</a></li>)}
-          <li><a href="/iletisim">İletişim</a></li>
+          {t.menu.map((m) => <li><a href={u(m.href)}>{m.ad}</a></li>)}
+          <li><a href={u('/iletisim')}>{t.ui.iletisim}</a></li>
+          <li><a href={yol(diger, sayfa) || '/'} lang={diger} hreflang={diger}>{t.ui.digerDil}</a></li>
         </ul>
       </div>
     </div>
-    <div class="kap telif">© {new Date().getFullYear()} CANSET. Tüm hakları saklıdır.</div>
+    <div class="kap telif">© {new Date().getFullYear()} CANSET. {t.ui.telif}</div>
   </footer>
 </body>
 </html>
@@ -115,6 +123,7 @@ const yol = decodeURI(Astro.url.pathname).replace(/\/$/, '');
   .mobil a:not(.dugme) { display: block; padding: 0.6rem 0.8rem; border-radius: 8px; color: var(--metin); text-decoration: none; font-weight: 500; font-size: 0.97rem; }
   .mobil a:not(.dugme):hover, .mobil a[aria-current] { color: var(--koyu); background: var(--acik); }
   .mobil .dugme { margin-left: 0.5rem; }
+  .mobil a.dil { font-weight: 700; font-size: 0.85rem; letter-spacing: 0.06em; border: 1px solid var(--cizgi); min-width: 44px; text-align: center; }
   @media (min-width: 901px) {
     /* masaüstünde details her zaman açık davranır */
     .mobil > ul { display: flex !important; }

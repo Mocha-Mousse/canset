@@ -1,0 +1,36 @@
+---
+import Base from '../../layouts/Base.astro';
+import { icerik, kok, diller } from '../../data/site.js';
+import referanslar from '../../data/referanslar.json';
+export const getStaticPaths = diller;
+const { lang } = Astro.props;
+const t = icerik[lang];
+const s = t.refSayfa;
+---
+<Base lang={lang} title={s.baslik} description={s.aciklama}>
+  <section class="sayfa-bas">
+    <div class="kap">
+      <p class="ust-yazi">{s.baslik}</p>
+      <h1>{s.h1}</h1>
+      <p class="giris">{s.giris}</p>
+    </div>
+  </section>
+
+  {referanslar.map((g, i) => (
+    <section class="bolum grup">
+      <div class="kap">
+        <h2>{s.gruplar?.[i] ?? g.title}</h2>
+        <div class="logolar">
+          {g.items.map((r) => r.url
+            ? <a href={r.url} target="_blank" rel="noopener" aria-label={`${r.name} (${t.ui.yeniSekme})`}><img src={kok + r.img} alt={r.name} loading="lazy" /></a>
+            : <span><img src={kok + r.img} alt={r.name} loading="lazy" /></span>)}
+        </div>
+      </div>
+    </section>
+  ))}
+</Base>
+
+<style>
+  .grup { padding: 2rem 0; }
+  .grup h2 { font-size: 1.35rem; margin-bottom: 1.25rem; padding-left: 0.9rem; border-left: 4px solid var(--canli); }
+</style>

@@ -1,25 +1,29 @@
 ---
-import Base from '../layouts/Base.astro';
-import { eksenler, farklar, hizmetler, projeler } from '../data/site.js';
-import referanslar from '../data/referanslar.json';
+import Base from '../../layouts/Base.astro';
+import { icerik, yol, kok, diller } from '../../data/site.js';
+import referanslar from '../../data/referanslar.json';
+export const getStaticPaths = diller;
+const { lang } = Astro.props;
+const t = icerik[lang];
+const h = t.home;
+const u = (p) => yol(lang, p);
 const tekil = [...new Map(referanslar.flatMap((g) => g.items).map((i) => [i.img, i])).values()];
+const sayilar = [t.hizmetler.length, t.projeler.length, tekil.length];
 ---
-<Base>
+<Base lang={lang}>
   <section class="hero">
     <div class="kap hero-ic">
       <div>
-        <p class="ust-yazi">Sürdürülebilirlik danışmanlığı · AR-GE</p>
-        <h1>Sürdürülebilirliği <em>ölçülebilir</em> ve yönetilebilir kılıyoruz.</h1>
-        <p class="giris">Kurumlara yönelik sürdürülebilirlik danışmanlığı hizmeti veren, çevresel etki ölçüm/raporlaması yapan ve kurumlara süreç iyileştirme önerileri sunan bir AR-GE firmasıyız.</p>
+        <p class="ust-yazi">{h.ustYazi}</p>
+        <h1>{h.h1[0]}<em>{h.h1[1]}</em>{h.h1[2]}</h1>
+        <p class="giris">{h.giris}</p>
         <div class="dugme-sira">
-          <a class="dugme" href="/hizmetler">Hizmetler</a>
-          <a class="dugme cizgili" href="/iletisim">Bize Ulaşın</a>
+          <a class="dugme" href={u('/hizmetler')}>{h.hizmetler}</a>
+          <a class="dugme cizgili" href={u('/iletisim')}>{h.ulasin}</a>
         </div>
       </div>
-      <ul class="sayilar" aria-label="Rakamlarla CANSET">
-        <li><strong>{hizmetler.length}</strong><span>hizmet başlığı</span></li>
-        <li><strong>{projeler.length}</strong><span>yayımlanan proje</span></li>
-        <li><strong>{tekil.length}</strong><span>referans ve çözüm ortağı</span></li>
+      <ul class="sayilar" aria-label={h.sayilarEtiket}>
+        {sayilar.map((s, i) => <li><strong>{s}</strong><span>{h.sayilar[i]}</span></li>)}
         <li><strong>ISO</strong><span>14064-1 · 14067 · 14040-44 · 14025</span></li>
       </ul>
     </div>
@@ -28,10 +32,10 @@ const tekil = [...new Map(referanslar.flatMap((g) => g.items).map((i) => [i.img,
 
   <section class="bolum">
     <div class="kap">
-      <p class="ust-yazi">Ne yapıyoruz?</p>
-      <h2>Hizmet portföyümüz dört ana eksende şekillenir</h2>
+      <p class="ust-yazi">{h.neUst}</p>
+      <h2>{h.neBaslik}</h2>
       <div class="izgara iki" style="margin-top:2rem">
-        {eksenler.map((e, i) => (
+        {t.eksenler.map((e, i) => (
           <article class="kart">
             <span class="no">{i + 1}</span>
             <h3>{e.ad}</h3>
@@ -39,43 +43,43 @@ const tekil = [...new Map(referanslar.flatMap((g) => g.items).map((i) => [i.img,
           </article>
         ))}
       </div>
-      <div class="dugme-sira"><a class="dugme cizgili" href="/hizmetler">Tüm hizmetleri inceleyin</a></div>
+      <div class="dugme-sira"><a class="dugme cizgili" href={u('/hizmetler')}>{h.tumHizmetler}</a></div>
     </div>
   </section>
 
   <section class="bolum tonlu">
     <div class="kap fark">
       <div>
-        <p class="ust-yazi">Neyi farklı yapıyoruz?</p>
-        <h2>Rapor üretmenin ötesinde, aksiyona dönüşen çıktılar</h2>
-        <p class="giris">CANSET; sürdürülebilirliği yalnızca bir raporlama faaliyeti olarak değil, strateji, operasyon, teknoloji ve yönetişim süreçlerine entegre edilmesi gereken çok boyutlu bir dönüşüm alanı olarak ele alır.</p>
-        <a class="dugme" href="/biz">Hakkımızda</a>
+        <p class="ust-yazi">{h.farkUst}</p>
+        <h2>{h.farkBaslik}</h2>
+        <p class="giris">{h.farkMetin}</p>
+        <a class="dugme" href={u('/biz')}>{h.hakkimizda}</a>
       </div>
       <ul class="tik">
-        {farklar.map((f) => <li>{f}</li>)}
+        {t.farklar.map((f) => <li>{f}</li>)}
       </ul>
     </div>
   </section>
 
   <section class="bolum">
     <div class="kap">
-      <p class="ust-yazi">Referanslar</p>
-      <h2>Güvenilir referanslar, çok disiplinli deneyim</h2>
-      <p class="giris">CANSET; kamu kurumlarından sanayi kuruluşlarına, AR-GE merkezlerinden uluslararası platformlara kadar geniş bir yelpazede çözüm ortağı olarak konumlanmıştır.</p>
+      <p class="ust-yazi">{h.refUst}</p>
+      <h2>{h.refBaslik}</h2>
+      <p class="giris">{h.refMetin}</p>
       <div class="logolar" style="margin-top:2rem">
-        {tekil.slice(0, 12).map((r) => <span><img src={r.img} alt={r.name} loading="lazy" /></span>)}
+        {tekil.slice(0, 12).map((r) => <span><img src={kok + r.img} alt={r.name} loading="lazy" /></span>)}
       </div>
-      <div class="dugme-sira"><a class="dugme cizgili" href="/referanslar">Tüm referanslar</a></div>
+      <div class="dugme-sira"><a class="dugme cizgili" href={u('/referanslar')}>{h.tumRef}</a></div>
     </div>
   </section>
 
   <section class="kap">
     <div class="cta">
       <div>
-        <h2>Projenizi konuşalım</h2>
-        <p>Kurumunuzun bugünkü ihtiyaçlarını karşılayan, yarının regülasyonlarına hazırlayan çözümler için bize ulaşın.</p>
+        <h2>{h.ctaBaslik}</h2>
+        <p>{h.ctaMetin}</p>
       </div>
-      <a class="dugme" href="/iletisim">Bilgi Al</a>
+      <a class="dugme" href={u('/iletisim')}>{t.ui.bilgiAl}</a>
     </div>
   </section>
 </Base>

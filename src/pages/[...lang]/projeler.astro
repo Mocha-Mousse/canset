@@ -1,22 +1,26 @@
 ---
-import Base from '../layouts/Base.astro';
-import { projeler } from '../data/site.js';
+import Base from '../../layouts/Base.astro';
+import { icerik, diller } from '../../data/site.js';
+export const getStaticPaths = diller;
+const { lang } = Astro.props;
+const t = icerik[lang];
+const s = t.projeSayfa;
 ---
-<Base title="Projeler" description="Karbon ayak izi, yaşam döngüsü değerlendirmesi ve çevresel sürdürülebilirlik projeleri.">
+<Base lang={lang} title={s.baslik} description={s.aciklama}>
   <section class="sayfa-bas">
     <div class="kap">
-      <p class="ust-yazi">Projeler</p>
-      <h1>Projeler</h1>
-      <p class="giris">Bu sayfada firmamız yönetim kurulu başkanı Prof. Dr. Fehmi Görkem Üçtuğ yürütücülüğünde veya danışmanlığında gerçekleştirilmiş karbon ayak izi, yaşam döngüsü değerlendirmesi ve çevresel sürdürülebilirlik projeleri bugünden geçmişe doğru kronolojik olarak sunulmaktadır.</p>
+      <p class="ust-yazi">{s.baslik}</p>
+      <h1>{s.baslik}</h1>
+      <p class="giris">{s.giris}</p>
     </div>
   </section>
 
   <section class="bolum" style="padding-top:2rem">
     <ol class="kap liste">
-      {projeler.map((p) => (
+      {t.projeler.map((p) => (
         <li>
           <span>{p.ad}</span>
-          {p.url && <a href={p.url} target="_blank" rel="noopener" aria-label={`${p.ad} – kaynağı aç (yeni sekme)`}>Kaynak ↗</a>}
+          {p.url && <a href={p.url} target="_blank" rel="noopener" aria-label={t.ui.kaynakEtiket(p.ad)}>{t.ui.kaynak} ↗</a>}
         </li>
       ))}
     </ol>

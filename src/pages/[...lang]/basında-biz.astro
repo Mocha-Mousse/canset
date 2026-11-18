@@ -1,22 +1,26 @@
 ---
-import Base from '../layouts/Base.astro';
-import { basin } from '../data/site.js';
+import Base from '../../layouts/Base.astro';
+import { icerik, diller } from '../../data/site.js';
+export const getStaticPaths = diller;
+const { lang } = Astro.props;
+const t = icerik[lang];
+const s = t.basinSayfa;
 ---
-<Base title="Basında Biz" description="CANSET ve Prof. Dr. Fehmi Görkem Üçtuğ ile ilgili basında çıkan haberler.">
+<Base lang={lang} title={s.baslik} description={s.aciklama}>
   <section class="sayfa-bas">
     <div class="kap">
-      <p class="ust-yazi">Hakkımızda</p>
-      <h1>Basında Biz</h1>
+      <p class="ust-yazi">{s.ust}</p>
+      <h1>{s.baslik}</h1>
     </div>
   </section>
 
   <section class="bolum" style="padding-top:2rem">
     <div class="kap izgara uc">
-      {basin.map((b) => (
+      {t.basin.map((b) => (
         <a class="kart haber" href={b.url} target="_blank" rel="noopener">
           <span class="rozet">{b.kaynak}</span>
           <h2>{b.ad}</h2>
-          <span class="git">Habere git ↗</span>
+          <span class="git">{t.ui.habereGit} ↗</span>
         </a>
       ))}
     </div>

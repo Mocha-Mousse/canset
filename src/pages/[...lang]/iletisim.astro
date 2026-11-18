@@ -1,49 +1,53 @@
 ---
-import Base from '../layouts/Base.astro';
-import { sirket } from '../data/site.js';
+import Base from '../../layouts/Base.astro';
+import { icerik, sirket, diller } from '../../data/site.js';
+export const getStaticPaths = diller;
+const { lang } = Astro.props;
+const t = icerik[lang];
+const s = t.iletisim;
 ---
-<Base title="İletişim" description="CANSET ile iletişime geçin: e-posta, telefon ve adres bilgileri.">
+<Base lang={lang} title={s.baslik} description={s.aciklama}>
   <section class="sayfa-bas">
     <div class="kap">
-      <p class="ust-yazi">İletişim</p>
-      <h1>Bize Ulaşın</h1>
+      <p class="ust-yazi">{s.baslik}</p>
+      <h1>{s.h1}</h1>
     </div>
   </section>
 
   <section class="bolum" style="padding-top:2rem">
     <div class="kap izgara iki">
       <div class="kart">
-        <h2>{sirket.ad}</h2>
+        <h2>{t.sirketAd}</h2>
         <dl>
-          <dt>Adres</dt><dd>{sirket.adres}</dd>
-          <dt>E-posta</dt><dd><a href={`mailto:${sirket.eposta}`}>{sirket.eposta}</a></dd>
-          <dt>Tel</dt><dd><a href={`tel:${sirket.tel}`}>{sirket.telGorunen}</a></dd>
+          <dt>{s.adres}</dt><dd>{sirket.adres}</dd>
+          <dt>{s.eposta}</dt><dd><a href={`mailto:${sirket.eposta}`}>{sirket.eposta}</a></dd>
+          <dt>{s.tel}</dt><dd><a href={`tel:${sirket.tel}`}>{sirket.telGorunen}</a></dd>
         </dl>
       </div>
 
       <!-- ponytail: form sunucusu yok; gönderim ziyaretçinin e-posta uygulamasını açar. Form servisi/endpoint seçilince action değişsin. -->
       <form class="kart" id="form">
         <div class="ikili">
-          <label>Adınız <input name="ad" autocomplete="given-name" required /></label>
-          <label>Soyadınız <input name="soyad" autocomplete="family-name" required /></label>
+          <label>{s.ad} <input name="ad" autocomplete="given-name" required /></label>
+          <label>{s.soyad} <input name="soyad" autocomplete="family-name" required /></label>
         </div>
-        <label>Email <input name="email" type="email" autocomplete="email" required /></label>
-        <label>Mesajınız <textarea name="mesaj" rows="6" required></textarea></label>
-        <button class="dugme" type="submit">Gönder</button>
-        <p class="not">Gönder’e bastığınızda mesajınız e-posta uygulamanızda hazırlanır.</p>
+        <label>{s.email} <input name="email" type="email" autocomplete="email" required /></label>
+        <label>{s.mesaj} <textarea name="mesaj" rows="6" required></textarea></label>
+        <button class="dugme" type="submit">{s.gonder}</button>
+        <p class="not">{s.not}</p>
       </form>
     </div>
   </section>
 </Base>
 
-<script is:inline define:vars={{ eposta: sirket.eposta }}>
+<script is:inline define:vars={{ eposta: sirket.eposta, konuSablon: s.konuMetin('{k}'), varsayilanKonu: s.varsayilanKonu }}>
   const f = document.getElementById('form');
   const konu = new URLSearchParams(location.search).get('konu');
-  if (konu) f.mesaj.value = `${konu} hakkında bilgi almak istiyorum.\n\n`;
+  if (konu) f.mesaj.value = `${konuSablon.replace('{k}', konu)}\n\n`;
   f.addEventListener('submit', (e) => {
     e.preventDefault();
     const govde = `${f.mesaj.value}\n\n${f.ad.value} ${f.soyad.value}\n${f.email.value}`;
-    location.href = `mailto:${eposta}?subject=${encodeURIComponent(konu || 'Web sitesi iletişim formu')}&body=${encodeURIComponent(govde)}`;
+    location.href = `mailto:${eposta}?subject=${encodeURIComponent(konu || varsayilanKonu)}&body=${encodeURIComponent(govde)}`;
   });
 </script>
 
